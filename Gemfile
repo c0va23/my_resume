@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 platforms :rbx do
   gem 'rubysl'
+  gem 'rubysl-test-unit', require: false
   gem 'racc'
 end
 

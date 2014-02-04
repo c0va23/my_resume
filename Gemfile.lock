@@ -276,6 +276,8 @@ GEM
     rubysl-syslog (2.0.1)
       ffi2-generators (~> 0.1)
     rubysl-tempfile (2.0.1)
+    rubysl-test-unit (2.0.3)
+      minitest (~> 4.7)
     rubysl-thread (2.0.2)
     rubysl-thwait (2.0.0)
     rubysl-time (2.0.3)
@@ -341,6 +343,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rspec-rails
   rubysl
+  rubysl-test-unit
   sass-rails (~> 4.0.0)
   shoulda-matchers
   slim-rails
