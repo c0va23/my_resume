@@ -54,4 +54,6 @@ gem 'puma'
 
 group :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
