@@ -1,9 +1,19 @@
 MyResume::Application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: redirect('/projects')
+
+  resources :projects, only: %w[ index show ]
+
+  namespace :admin do
+    concern :deletable do
+      get :delete, on: :member
+    end
+    resources :projects, concerns: [ :deletable ]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

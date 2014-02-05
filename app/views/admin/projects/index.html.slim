@@ -1,0 +1,17 @@
+h1= t('.projects')
+
+table.table
+  thead
+    th= Project.human_attribute_name(:name)
+    th= Project.human_attribute_name(:url)
+    th= Project.human_attribute_name(:descriptin)
+    th
+    th
+  tbody
+    - @projects.each do |project|
+      tr
+        td= link_to project.name, [ :admin, project ]
+        td= project.url
+        td= truncate project.description
+        td= link_to t('.edit'), edit_admin_project_path(project)
+        td= link_to t('.delete'), delete_admin_project_path(project)
