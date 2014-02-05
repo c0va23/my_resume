@@ -56,6 +56,9 @@ gem 'puma'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# gem 'simple-navigation'
+gem 'simple_navigation_renderers'
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
