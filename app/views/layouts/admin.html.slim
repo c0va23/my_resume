@@ -9,5 +9,9 @@ head
 body
   .navbar.navbar-default
     = render_navigation context: :admin
+
+  .container
+    = render_navigation context: :object
+
   .container
     = yield
