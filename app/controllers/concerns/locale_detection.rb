@@ -30,7 +30,7 @@ protected
   end
 
   def set_locale
-    I18n.locale = self.locale_param || self.header_locale || I18n.default_language
+    I18n.locale = self.locale_param || self.header_locale || I18n.default_locale
   end
 
   def set_locale_param
