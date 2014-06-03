@@ -41,4 +41,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.include CarrierWave::Test::Matchers, example_group: {file_path: config.escaped_path(%w[ uploaders ])}
 end
