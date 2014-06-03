@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_class = "nav navbar-nav"
     primary.selected_class = "active"
 
-    primary.item :projects, t('admin_nav igation.projects'), admin_projects_path, highlights_on: :subpath
+    primary.item :projects, t('admin_navigation.projects'), admin_projects_path, highlights_on: :subpath
   end
 
 end
