@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Screenshot do
-  describe 'colums' do
+  describe 'columns' do
     it { should have_db_column(:name).of_type(:string) }
     it { should have_db_column(:description).of_type(:text) }
     it { should have_db_column(:token).of_type(:string) }
+    it { should have_db_column(:project_id).of_type(:integer) }
   end
 
   describe 'validation' do
@@ -16,5 +17,9 @@ describe Screenshot do
 
   describe 'token' do
     its(:token) { should be_a(ScreenshotUploader) }
+  end
+
+  describe 'associations' do
+    it { should belong_to(:project) }
   end
 end

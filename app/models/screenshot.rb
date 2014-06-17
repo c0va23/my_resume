@@ -4,4 +4,6 @@ class Screenshot < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 1000 }
 
   mount_uploader :token, ScreenshotUploader
+
+  belongs_to :project
 end

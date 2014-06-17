@@ -6,4 +6,6 @@ describe Project do
   it { should have_db_column(:url).of_type(:string) }
 
   it { should validate_presence_of(:name) }
+
+  it { should have_many(:screenshots).dependent(:destroy) }
 end
