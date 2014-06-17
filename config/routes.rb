@@ -12,7 +12,9 @@ MyResume::Application.routes.draw do
     concern :deletable do
       get :delete, on: :member
     end
-    resources :projects, concerns: [ :deletable ]
+    resources :projects, concerns: [ :deletable ] do
+      resources :screenshots, concerns: [ :deletable ]
+    end
   end
 
   # Example of regular route:
