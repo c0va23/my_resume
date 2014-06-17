@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe ScreenshotUploader do
   let(:object) { OpenStruct.new(id: 1, screenshot: nil) }
+
   let(:screenshot_uploader) { ScreenshotUploader.new(object, :screenshot) }
 
   before { ScreenshotUploader.enable_processing = true }
@@ -12,18 +13,37 @@ describe ScreenshotUploader do
   context 'screenshot16-9.png' do
     let(:screenshot_path) { Rails.root.join('spec/stubs/screenshot16-9.png') }
 
+    describe :model do
+      subject { object }
+
+      its(:screenshot) { should be }
+    end
+
     describe 'original' do
       subject { screenshot_uploader }
 
       it { should have_dimensions(1920, 1080) }
-      its(:path) { should be_end_with("/original.png") }
+
+      describe "filename" do
+        subject { File.basename(screenshot_uploader.path) }
+
+        it { should be_start_with(object.screenshot) }
+        it { should be_end_with(".png") }
+      end
     end
 
-    describe 'thumb' do
+    describe :thumb200 do
       subject { screenshot_uploader.thumb200 }
 
       it { should be_no_larger_than(200, 200) }
-      its(:path) { should be_end_with("/thumb200.png") }
+
+      describe "filename" do
+        subject { File.basename(screenshot_uploader.thumb200.path) }
+
+        it { should be_start_with("thumb200") }
+        it { should be_include(object.screenshot) }
+        it { should be_end_with(".png") }
+      end
     end
   end
 
@@ -34,14 +54,27 @@ describe ScreenshotUploader do
       subject { screenshot_uploader }
 
       it { should have_dimensions(800, 600) }
-      its(:path) { should be_end_with("/original.jpg") }
+
+      describe "filename" do
+        subject { File.basename(screenshot_uploader.path) }
+
+        it { should be_start_with(object.screenshot) }
+        it { should be_end_with(".jpg") }
+      end
     end
 
-    describe 'thumb' do
+    describe :thumb200 do
       subject { screenshot_uploader.thumb200 }
 
       it { should be_no_larger_than(200, 200) }
-      its(:path) { should be_end_with("/thumb200.jpg") }
+
+      describe "filename" do
+        subject { File.basename(screenshot_uploader.thumb200.path) }
+
+        it { should be_start_with("thumb200") }
+        it { should be_include(object.screenshot) }
+        it { should be_end_with(".jpg") }
+      end
     end
   end
 
