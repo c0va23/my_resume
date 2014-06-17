@@ -9,7 +9,7 @@ describe ScreenshotUploader do
 
   before { screenshot_uploader.store!(File.open(screenshot_path)) }
 
-  describe 'screenshot16-9.png' do
+  context 'screenshot16-9.png' do
     let(:screenshot_path) { Rails.root.join('spec/stubs/screenshot16-9.png') }
 
     describe 'original' do
@@ -27,7 +27,7 @@ describe ScreenshotUploader do
     end
   end
 
-  describe 'screenshot4-3.jpg' do
+  context 'screenshot4-3.jpg' do
     let(:screenshot_path) { Rails.root.join('spec/stubs/screenshot4-3.jpg') }
 
     describe 'original' do
