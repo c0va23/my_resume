@@ -13,12 +13,6 @@ describe ScreenshotUploader do
   context 'screenshot16-9.png' do
     let(:screenshot_path) { Rails.root.join('spec/stubs/screenshot16-9.png') }
 
-    describe :model do
-      subject { object }
-
-      its(:screenshot) { should be }
-    end
-
     describe 'original' do
       subject { screenshot_uploader }
 
@@ -27,7 +21,6 @@ describe ScreenshotUploader do
       describe "filename" do
         subject { File.basename(screenshot_uploader.path) }
 
-        it { should be_start_with(object.screenshot) }
         it { should be_end_with(".png") }
       end
     end
@@ -41,7 +34,6 @@ describe ScreenshotUploader do
         subject { File.basename(screenshot_uploader.thumb200.path) }
 
         it { should be_start_with("thumb200") }
-        it { should be_include(object.screenshot) }
         it { should be_end_with(".png") }
       end
     end
@@ -58,7 +50,6 @@ describe ScreenshotUploader do
       describe "filename" do
         subject { File.basename(screenshot_uploader.path) }
 
-        it { should be_start_with(object.screenshot) }
         it { should be_end_with(".jpg") }
       end
     end
@@ -72,7 +63,6 @@ describe ScreenshotUploader do
         subject { File.basename(screenshot_uploader.thumb200.path) }
 
         it { should be_start_with("thumb200") }
-        it { should be_include(object.screenshot) }
         it { should be_end_with(".jpg") }
       end
     end

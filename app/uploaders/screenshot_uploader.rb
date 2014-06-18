@@ -33,23 +33,22 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
     "#{secure_token}#{extension}"
   end
 
-private
+protected
+
+  def token_variable_name
+    "@#{mounted_as}_token"
+  end
 
   def generate_secure_token(file)
-    new_secure_token = SecureRandom.hex(TOKEN_LENGTH)
-    self.model.send("#{mounted_as}=", new_secure_token)
+    self.model.instance_variable_set(self.token_variable_name, SecureRandom.hex(TOKEN_LENGTH))
   end
 
   def secure_token
-    self.model.send(mounted_as)
-  end
-
-  def version_prefix
-    self.version_name.try(:to_s) || 'original'
+    self.model.instance_variable_get(self.token_variable_name)
   end
 
   def extension
-    File.extname(original_filename)
+    File.extname(original_filename) if original_filename
   end
 
 end
