@@ -20,7 +20,7 @@ class Admin::ScreenshotsController < Admin::BaseController
 
   def create
     @screenshot = @project.screenshots.create(screenshot_params)
-    respond_with @screenshot, location: admin_project_screenshots_path
+    respond_with @screenshot, location: admin_project_screenshots_path(@project)
   end
 
   def delete
@@ -29,7 +29,7 @@ class Admin::ScreenshotsController < Admin::BaseController
 
   def destroy
     @screenshot.destroy
-    respond_with @screenshot, location: admin_project_screenshots_path
+    respond_with @screenshot, location: admin_project_screenshots_path(@project)
   end
 
   def edit
@@ -38,7 +38,7 @@ class Admin::ScreenshotsController < Admin::BaseController
 
   def update
     @screenshot.update_attributes(screenshot_params)
-    respond_with @screenshot
+    respond_with @screenshot, location: admin_project_screenshot_path(@project, @screenshot)
   end
 
 private
@@ -52,7 +52,7 @@ private
   end
 
   def screenshot_params
-    params.require(:screenshot).permit(:name, :description, :token)
+    params.require(:screenshot).permit(:name, :description, :image)
   end
 
 end

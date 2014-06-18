@@ -1,9 +1,9 @@
 class Screenshot < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 100 }
-  validates :token, presence: true
-  validates :description, presence: true, length: { maximum: 1000 }
+  validates :image, presence: true
+  validates :description, length: { maximum: 1000 }
 
-  mount_uploader :token, ScreenshotUploader
+  mount_uploader :image, ScreenshotUploader
 
   belongs_to :project
 end
