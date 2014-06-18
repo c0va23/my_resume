@@ -13,22 +13,46 @@ class Admin::ScreenshotsController < Admin::BaseController
     respond_with @screenshot
   end
 
+  def new
+    @screenshot = @project.screenshots.build
+    respond_with @screenshot
+  end
+
+  def create
+    @screenshot = @project.screenshots.create(screenshot_params)
+    respond_with @screenshot, location: admin_project_screenshots_path
+  end
+
+  def delete
+    respond_with @screenshot
+  end
+
+  def destroy
+    @screenshot.destroy
+    respond_with @screenshot, location: admin_project_screenshots_path
+  end
+
+  def edit
+    respond_with @screenshot
+  end
+
+  def update
+    @screenshot.update_attributes(screenshot_params)
+    respond_with @screenshot
+  end
+
 private
 
   def find_project
-    @project = Project.find(project_id)
-  end
-
-  def project_id
-    params.require(:project_id => Integer)
+    @project = Project.find(params[:project_id].try(:to_i))
   end
 
   def find_screenshot
-    @screenshot = @project.screenshots.find(screenshot_id)
+    @screenshot = @project.screenshots.find(params[:id].try(:to_i))
   end
 
-  def screenshot_id
-    params.require(:screenshot_id => Integer)
+  def screenshot_params
+    params.require(:screenshot).permit(:name, :description, :token)
   end
 
 end

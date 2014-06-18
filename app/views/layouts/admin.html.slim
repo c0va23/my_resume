@@ -8,10 +8,10 @@ head
   meta name="viewport" content="width=device-width, initial-scale=1"
 body
   .navbar.navbar-default
-    = render_navigation context: :admin
+    = render_navigation context: :admin, level: 1
 
   .container
-    = render_navigation context: :object
+    = render_navigation context: :admin, level: 2
 
   .container
     = yield

@@ -1,0 +1,5 @@
+h1= t('.delete_screenshot')
+div
+  = button_to [ :admin, @project, @screenshot ], method: :delete, class: 'btn btn-danger', form_class: 'form-inline' do
+    = t('.delete')
+  = link_to t('.cancel'), [ :admin, @project, @screenshot ], class: 'btn btn-default'
