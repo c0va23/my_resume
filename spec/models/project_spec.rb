@@ -8,4 +8,6 @@ describe Project do
   it { should validate_presence_of(:name) }
 
   it { should have_many(:screenshots).dependent(:destroy) }
+  it { should have_many(:tool_projects).dependent(:destroy) }
+  it { should have_many(:tools).through(:tool_projects) }
 end
