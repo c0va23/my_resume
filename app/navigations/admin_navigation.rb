@@ -23,6 +23,18 @@ SimpleNavigation::Configuration.run do |navigation|
         project_navigation.item :new_object, t('admin_navigation.new'), new_admin_project_path
       end
     end
+
+    primary.item :tools, t('admin_navigation.tools'), admin_tools_path, highlights_on: :subpath do |tool_navigation|
+      tool_navigation.dom_class = "nav nav-pills"
+      tool_navigation.selected_class = "active"
+      if @tool.try(:persisted?)
+        tool_navigation.item :show_tool, t('admin_navigation.show'), admin_tool_path(@tool)
+        tool_navigation.item :edit_tool, t('admin_navigation.edit'), edit_admin_tool_path(@tool)
+        tool_navigation.item :delete_tool, t('admin_navigation.delete'), delete_admin_tool_path(@tool)
+      else
+        tool_navigation.item :new_tool, t('admin_navigation.new'), new_admin_tool_path
+      end
+    end
   end
 
 end

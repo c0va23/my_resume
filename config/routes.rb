@@ -15,6 +15,7 @@ MyResume::Application.routes.draw do
     resources :projects, concerns: [ :deletable ] do
       resources :screenshots, concerns: [ :deletable ]
     end
+    resources :tools, concerns: [ :deletable ]
   end
 
   # Example of regular route:

@@ -1,0 +1,11 @@
+h1= t('.tools')
+
+table.table
+  thead
+    tr
+      th= Tool.human_attribute_name(:name)
+
+  tbody
+    - @tools.each do |tool|
+      tr
+        td= link_to tool.name, [ :admin, tool ]
