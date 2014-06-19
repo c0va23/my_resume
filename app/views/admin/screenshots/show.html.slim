@@ -1,7 +1,3 @@
-h1= t('.screenshot')
-h2= @screenshot.name
-p= @screenshot.description
-p
-  = link_to t('.edit'), [ :edit, :admin, @project, @screenshot ], class: 'btn btn-warning'
-  = link_to t('.delete'), [ :delete, :admin, @project, @screenshot ], class: 'btn btn-danger'
+h1 = t('.show_screenshot', default: 'Screenshot "%{name}"', name: @screenshot.name)
+p = @screenshot.description
 img src=@screenshot.image.url

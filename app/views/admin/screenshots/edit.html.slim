@@ -1,2 +1,2 @@
-h1= t('.edit_screenshot')
+h1 = t('.edit_screenshot', default: 'Edit screenshot "%{name}"', name: @screenshot.name)
 = render 'form'
