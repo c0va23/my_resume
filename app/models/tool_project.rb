@@ -4,6 +4,7 @@ class ToolProject < ActiveRecord::Base
 
   validates :project, presence: true
   validates :tool, presence: true
+  validates :tool_id, uniqueness: { scope: :project_id }
 
   delegate :name, to: :tool, prefix: true
 end

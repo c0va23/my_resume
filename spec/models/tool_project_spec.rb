@@ -6,6 +6,7 @@ describe ToolProject do
   it { should belong_to(:tool) }
   it { should validate_presence_of(:project) }
   it { should validate_presence_of(:tool) }
+  it { should validate_uniqueness_of(:tool_id).scoped_to(:project_id) }
 
   describe '#tool_name' do
     let(:tool) { create(:tool) }
