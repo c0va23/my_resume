@@ -1,0 +1,12 @@
+h1 = t('.tool_projects')
+
+table.table
+  thead
+    tr
+      th = ToolProject.human_attribute_name(:name)
+      th = ToolProject.human_attribute_name(:version)
+  tbody
+    - @tool_projects.each do |tool_project|
+      tr
+        td = link_to tool_project.tool_name, [ :admin, @project, tool_project ]
+        td = tool_project.version

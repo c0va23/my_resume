@@ -6,4 +6,6 @@ describe Tool do
   it { should validate_uniqueness_of(:name) }
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:projects).through(:tool_projects) }
+
+  pending 'scope :available_for'
 end

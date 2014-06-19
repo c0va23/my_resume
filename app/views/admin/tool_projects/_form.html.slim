@@ -1,0 +1,13 @@
+= form_for [ :admin, @project, @tool_project ], class: 'form' do |form|
+  = render 'admin/shared/errors', object: @tool_project
+
+  .form-group
+    = form.label :tool_id, ToolProject.human_attribute_name(:tool)
+    = form.collection_select :tool_id, Tool.available_for(@project), :id, :name, { prompt: true }, required: true, class: 'form-control'
+
+  .form-group
+    = form.label :version
+    = form.text_field :version, class: 'form-control'
+
+  .form-group
+    = form.button t('.save_tool_project'), class: 'btn btn-default'

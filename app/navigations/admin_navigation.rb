@@ -29,6 +29,20 @@ SimpleNavigation::Configuration.run do |navigation|
             screenshots_navigation.item :new_screenshot, t('admin_navigation.new_screenshot'), new_admin_project_screenshot_path(@project)
           end
         end
+
+        projects_navigation.item :tool_projects, t('admin_navigation.tool_projects'), admin_project_tool_projects_path(@project) do |tool_projects_navigation|
+          tool_projects_navigation.dom_class = "nav nav-tabs"
+          tool_projects_navigation.selected_class = "active"
+
+          if @tool_project.try(:persisted?)
+            tool_projects_navigation.item :show_tool_project, t('admin_navigation.show_tool_project'), admin_project_tool_project_path(@project, @tool_project)
+            tool_projects_navigation.item :edit_tool_project, t('admin_navigation.edit_tool_project'), edit_admin_project_tool_project_path(@project, @tool_project)
+            tool_projects_navigation.item :delete_tool_project, t('admin_navigation.delete_tool_project'), delete_admin_project_tool_project_path(@project, @tool_project)
+          else
+            tool_projects_navigation.item :new_tool_project, t('admin_navigation.new_tool_project'), new_admin_project_tool_project_path(@project)
+          end
+        end
+
       else
         projects_navigation.item :new_project, t('admin_navigation.new_project'), new_admin_project_path
       end

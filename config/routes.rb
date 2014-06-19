@@ -14,6 +14,7 @@ MyResume::Application.routes.draw do
     end
     resources :projects, concerns: [ :deletable ] do
       resources :screenshots, concerns: [ :deletable ]
+      resources :tool_projects, concerns: [ :deletable ]
     end
     resources :tools, concerns: [ :deletable ]
   end

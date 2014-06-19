@@ -1,0 +1,4 @@
+h1 = t('.delete_tool_project', default: 'Delete tool project "%{tool_name}"', tool_name: @tool_project.tool_name)
+
+p = button_to [ :admin, @project, @tool_project ], method: :delete, class: 'btn btn-danger' do
+  = t('.destroy_tool_project')
