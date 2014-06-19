@@ -7,5 +7,17 @@ describe Tool do
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:projects).through(:tool_projects) }
 
-  pending 'scope :available_for'
+  describe 'scope :available_for' do
+    let(:project) { create(:project) }
+    let!(:appended_tool) { create(:tool) }
+    let!(:other_tool) { create(:tool) }
+
+    before { project.tools << appended_tool }
+
+    subject { Tool.available_for(project) }
+
+    it { should be_include(other_tool) }
+    it { should_not be_include(appended_tool) }
+
+  end
 end
