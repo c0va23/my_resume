@@ -17,6 +17,7 @@
 
 /.ruby-*
 /.rspec
+/.env
 
 /public/uploads/
 
