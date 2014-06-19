@@ -1,3 +1,2 @@
-h1= @project.name
-p= link_to @project.url, @project.url
-p= simple_format @project.description
+h1 = t('.project', default: 'Project "%{name}"', name: @project.name)
+= simple_format @project.description
