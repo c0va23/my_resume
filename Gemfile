@@ -62,6 +62,9 @@ gem 'simple-navigation'
 gem 'mini_magick'
 gem 'carrierwave'
 
+# Validation
+gem 'validates_timeliness'
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
