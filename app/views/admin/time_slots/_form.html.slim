@@ -1,4 +1,5 @@
 = form_for [ :admin, @project, @time_slot ], class: 'form' do |form|
+  = render 'admin/shared/errors', object: @time_slot
   
   .form-group
     = form.label :started_at

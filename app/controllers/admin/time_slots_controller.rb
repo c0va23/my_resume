@@ -8,35 +8,35 @@ class Admin::TimeSlotsController < Admin::BaseController
 
   def index
     @time_slots = @project.time_slots
-    respond_with [ :admin, @project, @time_slots ]
+    respond_with @time_slots
   end
 
   def new
     @time_slot = @project.time_slots.build
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot
   end
 
   def create
     @time_slot = @project.time_slots.create(time_slot_params)
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot, location: [ :admin, @project, @time_slot ]
   end
 
   def show
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot
   end
 
   def update
     @time_slot.update_attributes(time_slot_params)
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot, location: [ :admin, @project, @time_slot ]
   end
 
   def delete
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot
   end
 
   def destroy
     @time_slot.destroy
-    respond_with [ :admin, @project, @time_slot ]
+    respond_with @time_slot, location: [ :admin, @project, :time_slots ]
   end
 
 protected
