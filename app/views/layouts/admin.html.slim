@@ -7,8 +7,11 @@ head
   = csrf_meta_tags
   meta name="viewport" content="width=device-width, initial-scale=1"
 body
-  .navbar.navbar-default
-    = render_navigation context: :admin, level: 1
+  nav.navbar.navbar-default
+    .container
+      = render_navigation context: :admin, level: 1
+      ul.nav.navbar-nav.navbar-right
+        li = link_to t('.home'), root_path
 
   .container
     = render_navigation context: :admin, level: 2
