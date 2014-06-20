@@ -18,4 +18,54 @@ describe TimeSlot do
     it { should_not allow_value(first_invalid_ended_at).for(:ended_at) }
     it { should_not allow_value(second_invalid_ended_at).for(:ended_at) }
   end
+
+  describe 'validate date range' do
+    let!(:other_time_slot) { create(:time_slot, started_at: 2.week.ago, ended_at: 2.week.since) }
+
+    before { subject.valid? }
+
+    context 'left crossing' do
+      subject { build(:time_slot, started_at: DateTime.now, ended_at: 1.month.since) }
+
+      its(:errors) { should have_key(:invalid_date_range) }
+    end
+
+    context 'rigth crossing' do
+      subject { build(:time_slot, started_at: 1.month.ago, ended_at: DateTime.now) }
+
+      its(:errors) { should have_key(:invalid_date_range) }
+    end
+
+    context 'inner crossing ' do
+      subject { build(:time_slot, started_at: 1.week.ago, ended_at: 1.week.since) }
+
+      its(:errors) { should have_key(:invalid_date_range) }
+    end
+
+    context 'outer crossing' do
+      subject { build(:time_slot, started_at: 1.month.ago, ended_at: 1.month.since) }
+
+      its(:errors) { should have_key(:invalid_date_range) }
+    end
+
+    context 'left border crossing' do
+      subject { build(:time_slot, started_at: other_time_slot.ended_at, ended_at: other_time_slot.ended_at + 1.week) }
+
+      its(:errors) { should_not have_key(:invalid_date_range) }
+    end
+
+    context 'rigth border crossing' do
+      subject { build(:time_slot, started_at: other_time_slot.started_at - 1.week, ended_at: other_time_slot.started_at) }
+
+      its(:errors) { should_not have_key(:invalid_date_range) }
+    end
+  end
+
+  describe 'update date range' do
+    subject { create(:time_slot, started_at: 1.month.ago, ended_at: 1.month.since) }
+
+    before { subject.update_attributes(started_at: 1.week.ago, ended_at: 1.week.since) }
+
+    its(:errors) { should_not have_key(:invalid_date_range) }
+  end
 end
