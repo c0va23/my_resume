@@ -1,0 +1,12 @@
+= form_for [ :admin, @project, @time_slot ], class: 'form' do |form|
+  
+  .form-group
+    = form.label :started_at
+    = form.date_field :started_at, class: 'form-control'
+
+  .form-group
+    = form.label :ended_at
+    = form.date_field :ended_at, class: 'form-control'
+
+  .form-group
+    = form.button t('.save_time_slot'), class: 'btn btn-default'

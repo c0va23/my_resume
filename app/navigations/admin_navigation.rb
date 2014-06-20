@@ -43,6 +43,19 @@ SimpleNavigation::Configuration.run do |navigation|
           end
         end
 
+        projects_navigation.item :time_slots, t('admin_navigation.time_slots'), [ :admin, @project, :time_slots ] do |time_slots_navigation|
+          time_slots_navigation.dom_class = "nav nav-tabs"
+          time_slots_navigation.selected_class = "active"
+
+          if @time_slot.try(:persisted?)
+            time_slots_navigation.item :show_time_slot, t('admin_navigation.show_time_slot'), [ :admin, @project, @time_slot ]
+            time_slots_navigation.item :edit_time_slot, t('admin_navigation.edit_time_slot'), [ :edit, :admin, @project, @time_slot ]
+            time_slots_navigation.item :delete_time_slot, t('admin_navigation.delete_time_slot'), [ :delete, :admin, @project, @time_slot ]
+          else
+            time_slots_navigation.item :new_time_slot, t('admin_navigation.new_time_slot'), [ :new, :admin, @project, :time_slot ]
+          end
+        end
+
       else
         projects_navigation.item :new_project, t('admin_navigation.new_project'), new_admin_project_path
       end

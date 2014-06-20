@@ -1,0 +1,18 @@
+h1 = t('.time_slots')
+
+table.table
+  thead
+    tr
+      th
+        = TimeSlot.human_attribute_name(:stared_at)
+        | —
+        = TimeSlot.human_attribute_name(:ended_at)
+
+  tbody
+    - @time_slots.each do |time_slot|
+      tr
+        td
+          = link_to [ :admin, @project, time_slot ] do
+            = time_slot.started_at
+            | —
+            = time_slot.ended_at
