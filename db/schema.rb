@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619064723) do
+ActiveRecord::Schema.define(version: 20140620073943) do
 
   create_table "projects", force: true do |t|
     t.string   "name",        null: false
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20140619064723) do
     t.datetime "updated_at"
     t.integer  "project_id"
   end
+
+  create_table "time_slots", force: true do |t|
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "time_slots", ["project_id"], name: "index_time_slots_on_project_id"
 
   create_table "tool_projects", force: true do |t|
     t.integer  "project_id"

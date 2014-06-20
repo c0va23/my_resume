@@ -10,4 +10,5 @@ describe Project do
   it { should have_many(:screenshots).dependent(:destroy) }
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:tools).through(:tool_projects) }
+  it { should have_many(:time_slots).dependent(:destroy) }
 end
