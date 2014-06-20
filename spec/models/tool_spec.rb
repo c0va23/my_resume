@@ -14,10 +14,21 @@ describe Tool do
 
     before { project.tools << appended_tool }
 
-    subject { Tool.available_for(project) }
+    subject { Tool.available_for(tool_project) }
 
-    it { should be_include(other_tool) }
-    it { should_not be_include(appended_tool) }
+    context 'new tool_project' do
+      let(:tool_project) { build(:tool_project, project: project, tool: nil) }
+
+      it { should be_include(other_tool) }
+      it { should_not be_include(appended_tool) }
+    end
+
+    context 'edit tool_project' do
+      let(:tool_project) { create(:tool_project, project: project, tool: other_tool) }
+
+      it { should be_include(other_tool) }
+      it { should_not be_include(appended_tool) }
+    end
 
   end
 end
