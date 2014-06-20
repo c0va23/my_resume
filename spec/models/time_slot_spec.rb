@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe TimeSlot do
-  it { should have_db_column(:started_at).of_type(:datetime) }
-  it { should have_db_column(:ended_at).of_type(:datetime) }
+  it { should have_db_column(:started_at).of_type(:date) }
+  it { should have_db_column(:ended_at).of_type(:date) }
   it { should belong_to(:project) }
   it { should validate_presence_of(:started_at) }
   it { should validate_presence_of(:project) }
@@ -25,13 +25,13 @@ describe TimeSlot do
     before { subject.valid? }
 
     context 'left crossing' do
-      subject { build(:time_slot, started_at: DateTime.now, ended_at: 1.month.since) }
+      subject { build(:time_slot, started_at: Date.current, ended_at: 1.month.since) }
 
       its(:errors) { should have_key(:invalid_date_range) }
     end
 
     context 'rigth crossing' do
-      subject { build(:time_slot, started_at: 1.month.ago, ended_at: DateTime.now) }
+      subject { build(:time_slot, started_at: 1.month.ago, ended_at: Date.current) }
 
       its(:errors) { should have_key(:invalid_date_range) }
     end

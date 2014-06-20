@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140620073943) do
   end
 
   create_table "time_slots", force: true do |t|
-    t.datetime "started_at"
-    t.datetime "ended_at"
+    t.date     "started_at"
+    t.date     "ended_at"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
