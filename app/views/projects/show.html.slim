@@ -10,3 +10,9 @@ h2= t('.tools')
   .row
     ul.list-inline
       = render partial: 'projects/show/tool_project', collection: @project.tool_projects.with_tools
+
+h2= t('.time_slots')
+.container
+  .row
+    ul.list-inline
+      = render partial: 'projects/show/time_slot', collection: @project.time_slots
