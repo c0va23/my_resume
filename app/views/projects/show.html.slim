@@ -4,3 +4,9 @@ h1= @project.name
 h2= t('.screenshots')
 .container
   .row= render partial: 'projects/show/screenshot', collection: @project.screenshots
+
+h2= t('.tools')
+.container
+  .row
+    ul.list-inline
+      = render partial: 'projects/show/tool_project', collection: @project.tool_projects.with_tools

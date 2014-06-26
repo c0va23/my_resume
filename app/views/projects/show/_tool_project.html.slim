@@ -1,0 +1,4 @@
+li
+  = tool_project.tool_name
+  - if tool_project.version.present?
+    | (v#{tool_project.version})
