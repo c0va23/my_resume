@@ -11,4 +11,14 @@ describe Project do
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:tools).through(:tool_projects) }
   it { should have_many(:time_slots).dependent(:destroy) }
+
+  describe '#total_period' do
+    let(:project) { create(:project) }
+    let!(:time_slot1) { create(:time_slot, project: project, started_at: 2.month.ago, ended_at: 1.month.ago) }
+    let!(:time_slot2) { create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil) }
+
+    subject { project.total_period }
+
+    its(:days) { should == 1.month + 1.week }
+  end
 end

@@ -80,4 +80,20 @@ describe TimeSlot do
 
     its(:errors) { should_not have_key(:date_range) }
   end
+
+  describe '#period' do
+    subject { time_slot.period }
+
+    context 'with ended_at' do
+      let(:time_slot) { build(:time_slot, started_at: 1.week.ago, ended_at: 1.week.since) }
+
+      its(:days) { should == 2.week }
+    end
+
+    context 'wihtout ended_at' do
+      let(:time_slot) { build(:time_slot, started_at: 1.week.ago, ended_at: nil) }
+
+      its(:days) { should == 1.week }
+    end
+  end
 end

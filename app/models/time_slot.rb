@@ -6,6 +6,10 @@ class TimeSlot < ActiveRecord::Base
   validates :ended_at, timeliness: { after: :started_at, allow_nil: true }
   validate :validate_date_range
 
+  def period
+    self.ended_at_or_now - self.started_at if self.started_at
+  end
+
 protected
 
   def ended_at_or_now
