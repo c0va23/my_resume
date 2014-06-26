@@ -1,0 +1,9 @@
+h1 = t('.tool', name: @tool.name, default: 'Tool "%{name}"')
+
+h2 = t('.total_period')
+p = format_period(@tool.total_period)
+
+h2 = t('.projects')
+ul.list-inline
+  - @tool.tool_projects.each do |tool_project|
+    li = link_to tool_project.project.name, tool_project.project

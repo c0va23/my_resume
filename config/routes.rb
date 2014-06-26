@@ -7,7 +7,7 @@ MyResume::Application.routes.draw do
   root to: redirect('/projects')
 
   resources :projects, only: %w[ index show ]
-  resources :tools, only: %w[ index ]
+  resources :tools, only: %w[ index show ]
 
   namespace :admin do
     concern :deletable do
