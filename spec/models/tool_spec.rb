@@ -6,6 +6,7 @@ describe Tool do
   it { should validate_uniqueness_of(:name) }
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:projects).through(:tool_projects) }
+  it { should have_many(:time_slots).through(:projects) }
 
   describe 'scope :available_for' do
     let(:project) { create(:project) }
@@ -29,6 +30,20 @@ describe Tool do
       it { should be_include(other_tool) }
       it { should_not be_include(appended_tool) }
     end
+  end # scope :available_for
 
+  describe '#total_period' do
+    let(:tool) { create(:tool) }
+    let(:project) { create(:project) }
+
+    before do
+      project.tools << tool
+      create(:time_slot, project: project, started_at: 2.month.ago, ended_at: 1.month.ago)
+      create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil)
+    end
+
+    subject { tool.total_period }
+
+    its(:days) { should == 1.month + 1.week }
   end
 end
