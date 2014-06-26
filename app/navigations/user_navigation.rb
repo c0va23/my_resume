@@ -9,6 +9,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.selected_class = "active"
 
     primary.item :projects, t('user_navigation.projects'), projects_path, highlights_on: :subpath
+    primary.item :tools, t('user_navigation.tools'), tools_path, highlights_on: :subpath
   end
 
 end
