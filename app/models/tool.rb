@@ -7,5 +7,5 @@ class Tool < ActiveRecord::Base
   def self.available_for(tool_project)
     used_tools = tool_project.project.tools.where.not(id: tool_project.tool_id)
     self.where.not(id: used_tools.select(Tool.arel_table[:id]))
- end
+  end
 end
