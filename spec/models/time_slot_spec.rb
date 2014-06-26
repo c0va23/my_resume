@@ -65,6 +65,12 @@ describe TimeSlot do
 
       its(:errors) { should_not have_key(:date_range) }
     end
+
+    context 'only started_at' do
+      subject { build(:time_slot, started_at: other_time_slot.started_at - 1.week, ended_at: nil) }
+
+      its(:errors) { should have_key(:date_range) }
+    end
   end
 
   describe 'update date range' do
