@@ -11,3 +11,6 @@ ul.list-inline
 h2= t('.time_slots')
 ul.list-unstyled
   = render partial: 'projects/show/time_slot', collection: @project.time_slots
+
+h2 = t('.total_period')
+= t('.days', default: '%{total_period} days', total_period: @project.total_period.to_i)
