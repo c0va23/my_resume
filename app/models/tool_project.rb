@@ -7,6 +7,7 @@ class ToolProject < ActiveRecord::Base
   validates :tool_id, uniqueness: { scope: :project_id }
 
   delegate :name, to: :tool, prefix: true
+  delegate :total_period, to: :project, prefix: true
 
   scope :with_tools, -> { self.preload(:tool) }
 

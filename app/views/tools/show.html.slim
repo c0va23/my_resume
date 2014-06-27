@@ -1,5 +1,15 @@
 h1 = t('.tool', name: @tool.name, default: 'Tool "%{name}"')
 
+h2 = t('.versions')
+.row
+  .col-md-8
+    = render 'tools/versions', tool: @tool
+
+  .col-md-4
+    = image_tag versions_tool_path(@tool, format: 'svg'),
+      title: t('.versions', default: 'Versions'),
+      width: '100%'
+
 h2 = t('.total_period')
 p = format_period(@tool.total_period)
 

@@ -1,0 +1,15 @@
+table.table
+  thead
+    tr
+      th
+      th = t('.version')
+      th = t('.period')
+      th = t('.proportion')
+  tbody
+    - tool.versions.each do |version|
+      tr
+        td bgcolor=version.color
+          | &nbsp;
+        td = version.label
+        td = format_period(version.period)
+        td = format_period_proportion(version.period, tool.total_period)

@@ -46,4 +46,26 @@ describe Tool do
 
     its(:days) { should == 1.month + 1.week }
   end
+
+  describe '#versions' do
+    let(:tool) { create(:tool) }
+    let(:version1) { '3.2' }
+    let(:version2) { '4.0' }
+    let!(:tool_project1) { create(:tool_project, version: version1, tool: tool) }
+    let!(:tool_project2) { create(:tool_project, version: version1, tool: tool) }
+    let!(:tool_project3) { create(:tool_project, version: version2, tool: tool) }
+    let(:project1) { tool_project1.project }
+    let(:project2) { tool_project2.project }
+    let(:project3) { tool_project3.project }
+    let!(:time_slot1) { create(:time_slot, project: project1, started_at: 2.week.ago, ended_at: 1.week.ago) }
+    let!(:time_slot2) { create(:time_slot, project: project2, started_at: 4.week.ago, ended_at: 3.week.ago) }
+    let!(:time_slot3) { create(:time_slot, project: project3, started_at: 2.month.ago, ended_at: 1.month.ago) }
+    let!(:time_slot4) { create(:time_slot, project: project3, started_at: 4.month.ago, ended_at: 3.month.ago) }
+
+    subject { tool.versions }
+
+    it { should include(::Tool::Version.new(version1, time_slot1.period + time_slot2.period)) }
+    it { should include(::Tool::Version.new(version2, time_slot3.period + time_slot4.period)) }
+
+  end
 end
