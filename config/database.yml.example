@@ -1,0 +1,16 @@
+default: &default
+  pool: 5
+  timeout: 5000
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: my_resume_development
+
+test:
+  <<: *default
+  database: my_resume_test
+
+# production:
+#   <<: *default
+#   database: my_resume_production
