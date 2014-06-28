@@ -19,23 +19,11 @@ module VersionsHelper
   end
 
   def render_version_pie(start_angel_deg, end_angel_deg, options = {})
-    start_angel_rad = deg_to_rad(start_angel_deg)
-    start_x, start_y = coors(start_angel_rad)
-
-    end_angel_rad = deg_to_rad(end_angel_deg)
-    end_x, end_y = coors(end_angel_rad)
-
-    large_arc = (end_angel_deg - start_angel_deg) > DEG_IN_PI ? 1 : 0
-    sweep_arc = start_angel_deg > end_angel_deg ? 0 : 1
-
-    points = [
-      move_to(CENTER_X, CENTER_Y),
-      line_to(start_x, start_y),
-      arc_to(RADIUS_X, RADIUS_Y, 0, large_arc, sweep_arc, end_x, end_y),
-      close_path,
-    ].join(' ')
-
-    concat tag :path, options.merge(d: points)
+    if (end_angel_deg - start_angel_deg) >= (DEG_IN_PI * 2)
+      render_circle options
+    else
+      render_sector start_angel_deg, end_angel_deg, options
+    end
   end
 
 protected
@@ -69,5 +57,29 @@ protected
 
   def close_path
     "Z"
+  end
+
+  def render_circle(options)
+    concat tag :ellipse, options.merge(cx: CENTER_X, cy: CENTER_Y, rx: RADIUS_X, ry: RADIUS_Y)
+  end
+
+  def render_sector(start_angel_deg, end_angel_deg, options)
+    start_angel_rad = deg_to_rad(start_angel_deg)
+    start_x, start_y = coors(start_angel_rad)
+
+    end_angel_rad = deg_to_rad(end_angel_deg)
+    end_x, end_y = coors(end_angel_rad)
+
+    large_arc = (end_angel_deg - start_angel_deg) > DEG_IN_PI ? 1 : 0
+    sweep_arc = start_angel_deg > end_angel_deg ? 0 : 1
+
+    points = [
+      move_to(CENTER_X, CENTER_Y),
+      line_to(start_x, start_y),
+      arc_to(RADIUS_X, RADIUS_Y, 0, large_arc, sweep_arc, end_x, end_y),
+      close_path,
+    ].join(' ')
+
+    concat tag :path, options.merge(d: points)
   end
 end
