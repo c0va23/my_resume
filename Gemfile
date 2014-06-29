@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 platforms :rbx do
   gem 'rubysl'
   gem 'rubysl-test-unit', require: false
