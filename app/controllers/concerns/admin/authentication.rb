@@ -1,8 +1,8 @@
 module Admin::Authentication
   extend ActiveSupport::Concern
 
-  USERNAME = 'admin'
-  PASSWORD = ENV['PASSWORD']
+  USERNAME = ENV['ADMIN_USERNAME'] || 'admin'
+  PASSWORD = ENV['ADMIN_PASSWORD']
 
   included do
     before_action :authenticate
