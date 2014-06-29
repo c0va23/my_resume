@@ -15,7 +15,7 @@
 /log/*.log
 /tmp/
 
-/.ruby-*
+/.ruby-gemset
 /.rspec
 /.env
 
