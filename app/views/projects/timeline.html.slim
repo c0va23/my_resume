@@ -1,0 +1,4 @@
+div style="height: #{(@time_slots.last.ended_at_or_now - @time_slots.first.started_at).to_i}px; border: 1px solid black; position: relative"
+  - @time_slots.each do |time_slot|
+    div style="border: 1px solid black; top: #{(time_slot.started_at - @time_slots.first.started_at).to_i}px; height: #{time_slot.period.to_i}px; position: absolute; width: 100%"
+      #{time_slot.started_at} — #{time_slot.ended_at_or_now} (#{link_to time_slot.project.name, time_slot.project})

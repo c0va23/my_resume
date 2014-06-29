@@ -10,11 +10,11 @@ class TimeSlot < ActiveRecord::Base
     self.ended_at_or_now - self.started_at if self.started_at
   end
 
-protected
-
   def ended_at_or_now
     self.ended_at || Date.current
   end
+
+protected
 
   def date_range
     (self.started_at..self.ended_at_or_now)

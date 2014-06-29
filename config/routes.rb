@@ -2,7 +2,11 @@ MyResume::Application.routes.draw do
 
   root to: redirect('/projects')
 
-  resources :projects, only: %w[ index show ]
+  resources :projects, only: %w[ index show ] do
+    collection do
+      get :timeline
+    end
+  end
   resources :tools, only: %w[ index show ] do
     member do
       get :versions
