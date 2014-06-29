@@ -52,7 +52,7 @@ private
   end
 
   def screenshot_params
-    params.require(:screenshot).permit(:name, :description, :image)
+    params.require(:screenshot).permit(:name, :description, :image, :image_cache)
   end
 
 end

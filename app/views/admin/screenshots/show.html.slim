@@ -1,3 +1,4 @@
 h1 = t('.show_screenshot', default: 'Screenshot "%{name}"', name: @screenshot.name)
 p = @screenshot.description
-img src=@screenshot.image.url
+= link_to @screenshot.image.url, target: '_blank' do
+  img src=@screenshot.image.url width="100%"

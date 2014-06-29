@@ -19,8 +19,8 @@ gem 'slim-rails'
 gem 'simple-navigation'
 
 # Image
-gem 'mini_magick'
 gem 'carrierwave'
+gem 'cloudinary'
 
 # Validation
 gem 'validates_timeliness'
