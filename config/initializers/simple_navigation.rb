@@ -1,1 +1,1 @@
-SimpleNavigation.config_file_paths = [ Rails.root.join(*%w[ app navigations ]) ]
+SimpleNavigation.config_file_paths = [ Rails.root.join(*%w[ config navigations ]) ]
