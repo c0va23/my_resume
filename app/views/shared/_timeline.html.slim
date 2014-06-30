@@ -1,0 +1,15 @@
+div.js-timeline data={ time_slots_path: time_slots_path }
+  div.js-timeline-container
+  - if p(filter)
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          a data-toggle="collapse" href="#filter-panel"
+            = t('.filter')
+        .panel-collapse.collapse#filter-panel
+          .panel-body.container
+            - Tool.all.each do |tool|
+              .col-md-2
+                label.checkbox
+                  input.js-timeline-filter type="checkbox" value=tool.name
+                  = tool.name

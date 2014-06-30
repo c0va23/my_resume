@@ -1,5 +1,6 @@
 class TimeSlot < ActiveRecord::Base
   belongs_to :project
+  has_many :tools, through: :project
 
   validates :project, presence: true
   validates :started_at, presence: true
