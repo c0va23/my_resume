@@ -19,6 +19,7 @@ gem 'pg'
 # View
 gem 'slim-rails'
 gem 'simple-navigation'
+gem 'roar-rails'
 
 # Image
 gem 'carrierwave'
@@ -35,6 +36,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'vis-rails'
 
 # Server
 gem 'puma'
