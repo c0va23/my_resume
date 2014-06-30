@@ -1,4 +1,4 @@
 li
-  = tool_project.tool_name
+  = link_to tool_project.tool_name, tool_path(tool_project.tool)
   - if tool_project.version.present?
     | (v#{tool_project.version})
