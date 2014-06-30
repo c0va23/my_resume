@@ -1,17 +1,17 @@
 MyResume::Application.routes.draw do
 
-  root to: redirect('/projects')
+  root to: 'main#index'
 
   resources :projects, only: %w[ index show ] do
-    collection do
-      get :timeline
-    end
+    resources :time_slots, only: :index
   end
   resources :tools, only: %w[ index show ] do
+    resources :time_slots, only: :index
     member do
       get :versions
     end
   end
+  resources :time_slots, only: :index
 
   get '/admin' => redirect('/admin/projects')
   namespace :admin do
