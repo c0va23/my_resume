@@ -11,7 +11,7 @@ h2 = t('.versions')
       width: '100%'
 
 h2 = t('.time_slots')
-div.js-timeline data-time_slots_path=tool_time_slots_path(@tool, format: 'json')
+= timeline_widget tool_time_slots_path(@tool, format: 'json')
 
 h2 = t('.total_period')
 p = format_period(@tool.total_period)

@@ -1,7 +1,9 @@
 #= require vis
 class Timeline
-  constructor: (@container) ->
-    timeSlotsPath = $(@container).data('time_slots_path')
+  constructor: (root) ->
+    @root = $(root)
+    @container = @root.find('.js-timeline-container')[0]
+    timeSlotsPath = @root.data('time-slots-path')
     $.getJSON(timeSlotsPath).done(@onDataLoaded)
 
   onDataLoaded: (data) =>

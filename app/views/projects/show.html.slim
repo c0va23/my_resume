@@ -9,7 +9,7 @@ ul.list-inline
   = render partial: 'projects/show/tool_project', collection: @project.tool_projects.with_tools
 
 h2= t('.time_slots')
-div.js-timeline data-time_slots_path=project_time_slots_path(@project, format: 'json')
+= timeline_widget project_time_slots_path(@project, format: 'json')
 
 h2 = t('.total_period')
 = t('.days', default: '%{total_period} days', total_period: @project.total_period.to_i)
