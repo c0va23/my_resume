@@ -11,9 +11,4 @@ class ProjectsController < ApplicationController
     respond_with @projects
   end
 
-  def timeline
-    @time_slots = TimeSlot.order(:started_at)
-    respond_with @time_slots
-  end
-
 end
