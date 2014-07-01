@@ -38,13 +38,13 @@ describe Tool do
 
     before do
       project.tools << tool
-      create(:time_slot, project: project, started_at: 2.month.ago, ended_at: 1.month.ago)
+      create(:time_slot, project: project, started_at: 60.days.ago, ended_at: 30.days.ago)
       create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil)
     end
 
     subject { tool.total_period }
 
-    its(:days) { should == 1.month + 1.week }
+    its(:days) { should == 30.days + 1.week }
   end
 
   describe '#versions' do
