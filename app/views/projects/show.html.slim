@@ -1,15 +1,28 @@
-h1 = @project.name
-= simple_format @project.description
+h1 = t '.project', project_name: @project.name, default: 'Project "%{project_name}"'
 
-h2= t('.screenshots')
-.row = render partial: 'projects/show/screenshot', collection: @project.screenshots
+section
+  h2 = t('.description')
+  = simple_format @project.description
 
-h2= t('.tools')
-ul.list-inline
-  = render partial: 'projects/show/tool_project', collection: @project.tool_projects.with_tools
+section
+  h2 = t('.screenshots')
+  - if @project.screenshots.any?
+    .row = render partial: 'projects/show/screenshot', collection: @project.screenshots
+  - else
+    p = t('.no_screenshots')
 
-h2= t('.time_slots')
-= timeline_widget project_time_slots_path(@project, format: 'json')
+section
+  h2 = t('.tools')
+  - if @project.tool_projects.any?
+    ul.list-inline = render partial: 'projects/show/tool_project', collection: @project.tool_projects.with_tools
+  - else
+    p = t('.no_tools')
 
-h2 = t('.total_period')
-= t('.days', default: '%{total_period} days', total_period: @project.total_period.to_i)
+section
+  h2 = t('.time_slots')
+  = timeline_widget project_time_slots_path(@project, format: 'json')
+
+
+section
+  h2 = t('.total_period')
+  p = format_period @project.total_period
