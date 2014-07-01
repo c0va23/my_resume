@@ -1,2 +1,13 @@
 h1 = t('.project', default: 'Project "%{name}"', name: @project.name)
-= simple_format @project.description
+
+dl
+  dt = Project.human_attribute_name(:description)
+  dd = simple_format @project.description
+
+dl
+  dt = Project.human_attribute_name(:role)
+  dd = simple_format @project.role
+
+dl
+  dt = Project.human_attribute_name(:url)
+  dd = link_to @project.url
