@@ -1,0 +1,44 @@
+en:
+  application_helper:
+    weeks:
+      one: '%{count} week'
+      other: '%{count} weeks'
+  layouts:
+    admin:
+      home: Home
+  main:
+    index:
+      my_projects: My projects
+  projects:
+    index:
+      projects: Projects
+    show:
+      project: 'Project "%{project_name}"'
+      description: 'Description'
+      role: 'Role'
+      screenshots: 'Screenshots'
+      no_screenshots: 'No screenshots'
+      tools: 'Tools'
+      no_tools: 'No tools'
+      time_slots: 'Time slots'
+      total_period: 'Total period'
+  shared:
+    timeline:
+      filter: 'Filter'
+  tools:
+    versions:
+      version: 'Version'
+      period: 'Period'
+      proportion: 'Proportion'
+    index:
+      tools: 'Tools'
+    show:
+      tool: 'Tool "%{tool_name}"'
+      versions: 'Versions'
+      time_slots: 'Time slots'
+      total_period: 'Total period'
+      projects: 'Projects'
+  user_navigation:
+    main_page: 'Main page'
+    projects: 'Pprojects'
+    tools: 'Tools'

@@ -1,0 +1,47 @@
+ru:
+  application_helper:
+    weeks:
+      one: '%{count} неделя'
+      few: '%{count} недели'
+      many: '%{count} недель'
+      other: '%{count} недель'
+  layouts:
+    admin:
+      home: 'Дом'
+  main:
+    index:
+      my_projects: 'Мои проекты'
+  projects:
+    index:
+      projects: 'Проекты'
+    show:
+      project: 'Проект "%{project_name}"'
+      description: 'Описание'
+      role: 'Роль'
+      screenshots: 'Скриншоты'
+      no_screenshots: 'Нет скриншотов'
+      tools: 'Инструменты'
+      no_tools: 'Нет инструментов'
+      time_slots: 'Временные слоты'
+      total_period: 'Общая продолжительность'
+  shared:
+    timeline:
+      filter: 'Фильтр'
+  tools:
+    versions:
+      version: 'Версия'
+      period: 'Продолжительность'
+      proportion: 'Доля'
+    index:
+      tools: 'Инструменты'
+    show:
+      tool: 'Инструмент "%{tool_name}"'
+      versions: 'Версии'
+      time_slots: 'Временные слоты'
+      total_period: 'Общая продолжительность'
+      projects: 'Проекты'
+
+  user_navigation:
+    main_page: 'Главная страница'
+    projects: 'Проекты'
+    tools: 'Инструменты'
