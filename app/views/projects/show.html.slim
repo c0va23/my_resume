@@ -1,8 +1,14 @@
-h1 = t '.project', project_name: @project.name, default: 'Project "%{project_name}"'
+h1
+  = t '.project', project_name: @project.name, default: 'Project "%{project_name}"'
+  |  (#{link_to(@project.url, )})
 
 section
   h2 = t('.description')
   = simple_format @project.description
+
+section
+  h2 = t('.role')
+  = simple_format @project.role
 
 section
   h2 = t('.screenshots')
