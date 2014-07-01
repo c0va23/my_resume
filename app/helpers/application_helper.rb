@@ -1,7 +1,9 @@
 module ApplicationHelper
+  WEEK = 7
 
   def format_period(period)
-    t '.days', count: period.to_i, default:'%{count} days'
+    week_count = (period / WEEK).to_i
+    t '.weeks', count: week_count, default:'%{count} weeks'
   end
 
   def format_period_proportion(period, total_period)
