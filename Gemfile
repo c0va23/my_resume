@@ -53,6 +53,7 @@ end
 
 group :development do
   gem 'quiet_assets'
+  gem 'i18n-tasks'
 end
 
 group :production do
