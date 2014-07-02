@@ -2,7 +2,7 @@ class Admin::ProjectsController < Admin::BaseController
   before_action :find_project, only: %w[ show edit update delete destroy ]
 
   def index
-    @projects = Project.all
+    @projects = Project.order(:name).all
   end
 
   def new

@@ -5,9 +5,11 @@ table.table
     th= Project.human_attribute_name(:name)
     th= Project.human_attribute_name(:url)
     th= Project.human_attribute_name(:descriptin)
+    th= Project.human_attribute_name(:role)
   tbody
     - @projects.each do |project|
       tr
         td= link_to project.name, [ :admin, project ]
-        td= project.url
+        td= link_to project.url if project.url?
         td= truncate project.description
+        td= truncate project.role
