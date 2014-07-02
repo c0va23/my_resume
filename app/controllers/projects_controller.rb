@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.order(:name).all
     respond_with @projects
   end
 
