@@ -6,7 +6,7 @@ class ToolsController < ApplicationController
   before_action :find_tool, only: %w[ show versions ]
 
   def index
-    @tools = Tool.all
+    @tools = Tool.all.includes(:time_slots)
     respond_with @tools
   end
 
