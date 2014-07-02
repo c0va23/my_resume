@@ -13,7 +13,7 @@ class Tool < ActiveRecord::Base
   end
 
   def versions
-    self.tool_projects.group_by(&:version).map do |(version, tool_projects)|
+    self.tool_projects.includes(:project => [ :time_slots ]).group_by(&:version).map do |(version, tool_projects)|
       period = tool_projects.map(&:project_total_period).inject(0, :+)
       Version.new(version, period)
     end
