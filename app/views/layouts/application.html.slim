@@ -12,3 +12,4 @@ body
       = render_navigation context: :user, level: 1
   .container
     = yield
+  = render 'shared/yandex_metrika' if yandex_metrika?

@@ -13,6 +13,7 @@ Resume for one developer.
 * `ADMIN_PASSWORD` ­— password for administration panel.
 * `CLOUDINARY_URL` — configuration url for Cloudinary (start with "cloudinary://").
 * `SECRET_KEY_BASE` — need only for production environment (see file `config/secret.rb`).
+* `YANDEX_METRIKA_COUNTER_ID` — Yandex.Metrika counter ID.
 
 ## Demo
 

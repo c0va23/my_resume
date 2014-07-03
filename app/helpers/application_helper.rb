@@ -11,4 +11,12 @@ module ApplicationHelper
     '%.2f %' % proportion
   end
 
+  def yandex_metrika_counter_id
+    @yandex_metrika_counter_id ||= ENV['YANDEX_METRIKA_COUNTER_ID']
+  end
+
+  def yandex_metrika?
+    yandex_metrika_counter_id.present? && !Rails.env.development?
+  end
+
 end
