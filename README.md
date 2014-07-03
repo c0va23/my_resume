@@ -1,8 +1,12 @@
-== README
+### README
 
-rails 4.0
-ruby 2.1
+Resume for one developer.
 
-== Demo
+## Tools
+
+* rails 4.1
+* ruby 2.1
+
+## Demo
 
 http://www.fedorenko-d.ru/
