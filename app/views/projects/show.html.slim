@@ -1,6 +1,7 @@
 h1
   = t '.project', project_name: @project.name, default: 'Project "%{project_name}"'
-  |  (#{link_to(@project.url, )})
+  - if @project.url?
+    |  (#{link_to(@project.url, )})
 
 section
   h2 = t('.description')
