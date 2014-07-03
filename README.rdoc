@@ -1,4 +1,0 @@
-== README
-
-rails 4.0
-ruby 2.1 (or rubinius 2.2.3)
