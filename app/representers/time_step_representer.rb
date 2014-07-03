@@ -2,8 +2,8 @@ module TimeStepRepresenter
   include Roar::Representer::JSON
   include ActionView::Helpers::TagHelper
 
-  property :started_at, as: :start
-  property :ended_at, as: :end
+  property :started_at_aligned, as: :start
+  property :ended_at_aligned, as: :end
   property :content
   property :tool_names
 
@@ -15,6 +15,14 @@ protected
 
   def tool_names
     self.tools.map(&:name)
+  end
+
+  def started_at_aligned
+    self.started_at.beginning_of_day
+  end
+
+  def ended_at_aligned
+    self.ended_at.end_of_day
   end
 
 end

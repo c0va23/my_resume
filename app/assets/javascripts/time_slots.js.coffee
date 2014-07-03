@@ -5,6 +5,7 @@ class Timeline
     @container = @root.find('.js-timeline-container')[0]
 
     timeSlotsPath = @root.data('time-slots-path')
+    $.ajaxSetup headers: { 'Time-Zone': @timeZone() }
     $.getJSON(timeSlotsPath).done(@onDataLoaded)
 
     @filters = @root.find('.js-timeline-filter')
@@ -30,6 +31,8 @@ class Timeline
 
   updateFilter: =>
     @timeline.setItems @timeSlots()
+
+  timeZone: => - new Date().getTimezoneOffset() / 60
 
 jQuery ($) ->
   $('.js-timeline').each -> new Timeline(@)
