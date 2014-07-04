@@ -1,3 +1,6 @@
 h1 = t('.tools')
 
-= render @tools
+- @tools.in_groups_of(4) do |tools_group|
+  .row
+    - tools_group.each do |tool|
+      = render tool
