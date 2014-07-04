@@ -9,6 +9,7 @@ en:
   main:
     index:
       my_projects: My projects
+      all_experience: 'All experience'
   projects:
     index:
       projects: Projects

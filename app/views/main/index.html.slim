@@ -1,2 +1,5 @@
 h2 = t('.my_projects')
 = timeline_widget time_slots_path(format: 'json'), true
+
+h2 = t('.all_experience')
+= format_period TimeSlot.total_period

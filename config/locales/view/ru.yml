@@ -11,6 +11,7 @@ ru:
   main:
     index:
       my_projects: 'Мои проекты'
+      all_experience: 'Всего опыта'
   projects:
     index:
       projects: 'Проекты'
