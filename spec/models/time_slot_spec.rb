@@ -87,13 +87,22 @@ describe TimeSlot do
     context 'with ended_at' do
       let(:time_slot) { build(:time_slot, started_at: 1.week.ago, ended_at: 1.week.since) }
 
-      its(:days) { should == 2.week }
+      it { should == 2.week }
     end
 
     context 'wihtout ended_at' do
       let(:time_slot) { build(:time_slot, started_at: 1.week.ago, ended_at: nil) }
 
-      its(:days) { should == 1.week }
+      it { should == 1.week }
     end
+  end
+
+  describe '::total_period' do
+    let!(:time_slot1) { create(:time_slot, started_at: 60.days.ago, ended_at: 30.days.ago) }
+    let!(:time_slot2) { create(:time_slot, started_at: 14.days.ago, ended_at: 7.days.ago) }
+
+    subject { TimeSlot.total_period }
+
+    it { should == 37.days }
   end
 end

@@ -9,8 +9,14 @@ class TimeSlot < ActiveRecord::Base
 
   delegate :name, to: :project, prefix: true
 
+  class << self
+    def total_period
+      self.all.to_a.sum(&:period)
+    end
+  end
+
   def period
-    self.ended_at_or_now - self.started_at if self.started_at
+    (self.ended_at_or_now - self.started_at).days
   end
 
   def ended_at_or_now

@@ -44,7 +44,7 @@ describe Tool do
 
     subject { tool.total_period }
 
-    its(:days) { should == 30.days + 1.week }
+    it { should == 30.days + 1.week }
   end
 
   describe '#versions' do

@@ -20,6 +20,6 @@ describe Project do
 
     subject { project.total_period }
 
-    its(:days) { should == 30.days + 1.week }
+    it { should == 30.days + 1.week }
   end
 end
