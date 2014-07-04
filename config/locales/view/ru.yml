@@ -4,7 +4,14 @@ ru:
       one: '%{count} неделя'
       few: '%{count} недели'
       many: '%{count} недель'
-      other: '%{count} недель'
+    months:
+      one: '%{count} месяц'
+      few: '%{count} месяцев'
+      many: '%{count} месяцев'
+    years:
+      one: '%{count} год'
+      few: '%{count} года'
+      many: '%{count} лет'
   layouts:
     admin:
       home: 'Дом'

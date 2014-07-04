@@ -3,6 +3,12 @@ en:
     weeks:
       one: '%{count} week'
       other: '%{count} weeks'
+    months:
+      one: '%{count} month'
+      other: '%{count} months'
+    years:
+      one: '%{count} year'
+      other: '%{count} years'
   layouts:
     admin:
       home: Home

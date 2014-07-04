@@ -1,8 +1,13 @@
 module ApplicationHelper
 
   def format_period(period)
-    week_count = (period / 1.week).to_i
-    t 'application_helper.weeks', count: week_count, default:'%{count} weeks'
+    { years: 365.days, months: 30.days, weeks: 7.days }.each_with_object([]) do |(key, multiplier), list|
+      count = (period / multiplier).floor
+      if count > 0
+        period = period - count * multiplier
+        list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
+      end
+    end.join(' ')
   end
 
   def format_period_proportion(period, total_period)
