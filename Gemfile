@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.1.2'
 
@@ -37,6 +38,8 @@ gem 'bootstrap-sass', '~> 3.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'vis-rails'
+gem 'rails-assets-bootstrap-markdown', '~> 2.5'
+gem 'rails-assets-marked', '~> 0.3.2'
 
 # Server
 gem 'puma'
