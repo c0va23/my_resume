@@ -1,0 +1,4 @@
+h1 = t('.delete_page', default: 'Delete page %{page_title}', page_title: @page.title)
+
+p = button_to [ :admin, @page ], method: :delete, class: 'btn btn-danger' do
+  = t('.destroy_page')

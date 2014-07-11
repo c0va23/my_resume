@@ -72,6 +72,18 @@ SimpleNavigation::Configuration.run do |navigation|
         tools_navigation.item :new_tool, t('admin_navigation.new_tool'), new_admin_tool_path
       end
     end
+
+    primary.item :pages, t('admin_navigation.pages'), admin_pages_path, highlights_on: :subpath do |pages_navigation|
+      pages_navigation.dom_class = "nav nav-pills"
+      pages_navigation.selected_class = "active"
+      if @page.try(:persisted?)
+        pages_navigation.item :show_page, t('admin_navigation.show_page'), admin_page_path(@page)
+        pages_navigation.item :edit_page, t('admin_navigation.edit_page'), edit_admin_page_path(@page)
+        pages_navigation.item :delete_page, t('admin_navigation.delete_page'), delete_admin_page_path(@page)
+      else
+        pages_navigation.item :new_page, t('admin_navigation.new_page'), new_admin_page_path
+      end
+    end
   end
 
 end

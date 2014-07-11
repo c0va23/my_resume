@@ -24,6 +24,7 @@ MyResume::Application.routes.draw do
       resources :time_slots, concerns: [ :deletable ]
     end
     resources :tools, concerns: [ :deletable ]
+    resources :pages, concerns: [ :deletable ]
   end
 
 end

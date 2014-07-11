@@ -1,0 +1,8 @@
+table.table
+  thead
+    tr
+      th = Page.human_attribute_name(:title)
+  tbody
+    - @pages.each do |page|
+      tr
+        td = link_to page.title, [ :admin, page ]
