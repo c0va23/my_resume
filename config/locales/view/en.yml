@@ -45,7 +45,11 @@ en:
       time_slots: 'Time slots'
       total_period: 'Total period'
       projects: 'Projects'
+  pages:
+    index:
+      pages: 'Pages'
   user_navigation:
     main_page: 'Main page'
     projects: 'Pprojects'
     tools: 'Tools'
+    pages: 'Pages'

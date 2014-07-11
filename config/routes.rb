@@ -12,6 +12,7 @@ MyResume::Application.routes.draw do
     end
   end
   resources :time_slots, only: :index
+  resources :pages, only: %w[ index show ]
 
   get '/admin' => redirect('/admin/projects')
   namespace :admin do

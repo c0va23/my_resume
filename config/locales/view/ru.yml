@@ -48,8 +48,11 @@ ru:
       time_slots: 'Временные слоты'
       total_period: 'Общая продолжительность'
       projects: 'Проекты'
-
+  pages:
+    index:
+      pages: 'Страницы'
   user_navigation:
     main_page: 'Главная страница'
     projects: 'Проекты'
     tools: 'Инструменты'
+    pages: 'Страницы'
