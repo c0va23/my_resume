@@ -16,3 +16,7 @@
 body {
   overflow-y: scroll;
 }
+
+textarea.form-control {
+  resize: vertical;
+}
