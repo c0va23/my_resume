@@ -6,7 +6,7 @@
 
   .form-group
     = form.label :content
-    = form.text_area :content, class: 'form-control'
+    = form.text_area :content, class: 'form-control', data: {provide: 'markdown'}
 
   .form-group
     = form.button t('.save'), class: 'btn btn-default'
