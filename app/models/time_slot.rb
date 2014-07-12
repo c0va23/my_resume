@@ -4,7 +4,7 @@ class TimeSlot < ActiveRecord::Base
 
   validates :project, presence: true
   validates :started_at, presence: true
-  validates :ended_at, timeliness: { after: :started_at, allow_nil: true }
+  validates :ended_at, date: { after: :started_at, allow_nil: true }
   validate :validate_date_range
 
   delegate :name, to: :project, prefix: true

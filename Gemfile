@@ -28,7 +28,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 # Validation
-gem 'validates_timeliness'
+gem 'date_validator'
 
 # Assets
 gem 'uglifier', '>= 1.3.0'
