@@ -18,7 +18,8 @@ gem 'rails-i18n'
 gem 'pg'
 
 # View
-gem 'slim-rails'
+gem 'redcarpet'
+gem 'slim'
 gem 'simple-navigation'
 gem 'roar-rails'
 

@@ -3,4 +3,4 @@ h1 = t('.pages')
 - @pages.each do |page|
   article
     h2 = link_to page.title, page
-    = simple_format page.content
+    = markdown page.content

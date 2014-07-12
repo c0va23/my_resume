@@ -161,6 +161,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redcarpet (3.1.2)
     representable (1.8.5)
       multi_json
       nokogiri
@@ -405,14 +406,9 @@ GEM
       activesupport (>= 3.0.0)
     simple-navigation (3.11.0)
       activesupport (>= 2.3.2)
-    slim (2.0.2)
+    slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (2.1.5)
-      actionpack (>= 3.0, < 4.2)
-      activesupport (>= 3.0, < 4.2)
-      railties (>= 3.0, < 4.2)
-      slim (~> 2.0)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -423,7 +419,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    temple (0.6.7)
+    temple (0.6.8)
     term-ansicolor (1.3.0)
       tins (~> 1.0)
     terminal-table (1.4.5)
@@ -476,6 +472,7 @@ DEPENDENCIES
   rails-assets-marked (~> 0.3.2)
   rails-i18n
   rails_12factor
+  redcarpet
   roar-rails
   rspec-rails
   rubysl
@@ -483,7 +480,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   shoulda-matchers
   simple-navigation
-  slim-rails
+  slim
   turbolinks
   uglifier (>= 1.3.0)
   validates_timeliness
