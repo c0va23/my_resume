@@ -21,4 +21,4 @@ Resume for one developer.
 
 ## Demo
 
-http://www.fedorenko-d.ru/
+http://resume.fedorenko-d.ru/
