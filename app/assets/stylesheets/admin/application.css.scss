@@ -1,4 +1,7 @@
 //= require bootstrap
 //= required bootstrap-markdown
-//= required .
-//= require_self
+//= required_tree .
+
+body {
+  overflow-y: scroll;
+}
