@@ -1,4 +1,4 @@
-module TimeStepRepresenter
+module TimeSlotRepresenter
   include Roar::Representer::JSON
   include ActionView::Helpers::TagHelper
 
