@@ -22,7 +22,7 @@ protected
   end
 
   def ended_at_aligned
-    self.ended_at.end_of_day
+    self.ended_at_or_now.end_of_day
   end
 
 end
