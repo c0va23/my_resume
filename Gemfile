@@ -46,7 +46,7 @@ source 'https://rubygems.org' do
   gem 'dotenv-rails'
 
   group :test do
-    gem 'rspec-rails'
+    gem 'rspec-rails', '~> 2.14.0'
     gem 'factory_girl_rails'
     gem 'shoulda-matchers'
     gem 'guard-rspec'
