@@ -60,8 +60,8 @@ describe Tool do
     let(:project3) { tool_project3.project }
     let!(:time_slot1) { create(:time_slot, project: project1, started_at: 2.week.ago, ended_at: 1.week.ago) }
     let!(:time_slot2) { create(:time_slot, project: project2, started_at: 4.week.ago, ended_at: 3.week.ago) }
-    let!(:time_slot3) { create(:time_slot, project: project3, started_at: 2.month.ago, ended_at: 1.month.ago) }
-    let!(:time_slot4) { create(:time_slot, project: project3, started_at: 4.month.ago, ended_at: 3.month.ago) }
+    let!(:time_slot3) { create(:time_slot, project: project3, started_at: 6.week.ago, ended_at: 5.week.ago) }
+    let!(:time_slot4) { create(:time_slot, project: project3, started_at: 8.week.ago, ended_at: 7.week.ago) }
 
     subject { tool.versions }
 
