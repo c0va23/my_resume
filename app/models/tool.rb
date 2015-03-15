@@ -3,6 +3,8 @@ class Tool < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
+  belongs_to :tool_type
+
   has_many :tool_projects, dependent: :destroy
   has_many :projects, through: :tool_projects
   has_many :time_slots, through: :projects

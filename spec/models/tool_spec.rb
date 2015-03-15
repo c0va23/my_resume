@@ -7,6 +7,7 @@ describe Tool do
   it { should have_many(:tool_projects).dependent(:destroy) }
   it { should have_many(:projects).through(:tool_projects) }
   it { should have_many(:time_slots).through(:projects) }
+  it { should belong_to(:tool_type) }
 
   describe 'scope :available_for' do
     let(:project) { create(:project) }
