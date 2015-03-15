@@ -50,6 +50,7 @@ source 'https://rubygems.org' do
     gem 'factory_girl_rails'
     gem 'shoulda-matchers'
     gem 'guard-rspec'
+    gem 'timecop'
   end
 
   group :development do

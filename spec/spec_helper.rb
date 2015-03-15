@@ -43,4 +43,12 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include CarrierWave::Test::Matchers, example_group: {file_path: config.escaped_path(%w[ uploaders ])}
+
+  config.before :suite do
+    Timecop.travel Time.new(2014, 6, 1)
+  end
+
+  config.after :suite do
+    Timecop.return
+  end
 end
