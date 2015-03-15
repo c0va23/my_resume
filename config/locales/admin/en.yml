@@ -1,0 +1,97 @@
+---
+en:
+  admin:
+    projects:
+      form:
+        save_project: Save project
+      delete:
+        delete_project: Delete project
+        destroy_project: Destroy project
+      edit:
+        edit_project: Edit project
+      index:
+        projects: Projects
+      new:
+        new_project: New project
+      show:
+        project: Project
+    screenshots:
+      form:
+        save_screenshot: Save screenshot
+      delete:
+        delete_screenshot: Delete screenshot
+      edit:
+        edit_screenshot: Edit screenshot
+      new:
+        new_screenshot: New screenshot
+      show:
+        show_screenshot: Show screenshot
+    time_slots:
+      form:
+        save_time_slot: Save time slot
+      delete:
+        delete_time_slot: Delete time slot
+        destroy_time_slot: Destroy time slot
+      edit:
+        edit_time_slot: Edit time slot
+      index:
+        time_slots: Time slots
+      new:
+        new_time_slot: New time slot
+      show:
+        time_slot: Time slot
+    tool_projects:
+      form:
+        save_tool_project: Save tool project
+      delete:
+        delete_tool_project: Delete tool project
+        destroy_tool_project: Destroy tool project
+      edit:
+        edit_tool_project: Edit tool project
+      index:
+        tool_projects: Tool projects
+      new:
+        new_tool_project: New tool project
+      show:
+        tool_project: Tool project
+    tools:
+      form:
+        save_tool: Save tool
+      delete:
+        delete_tool: Delete tool
+        delete: Delete
+      edit:
+        edit_tool: Edit tool
+      index:
+        tools: Tools
+      new:
+        new_tool: New tool
+      show:
+        show_tool: Show tool
+
+  admin_navigation:
+    projects: Projects
+    show_project: Show project
+    edit_project: Edit project
+    delete_project: Delete project
+    screenshots: Screenshots
+    show_screenshot: Show screenshot
+    edit_screenshot: Edit screenshot
+    delete_screenshot: Delete screenshot
+    new_screenshot: New screenshot
+    tool_projects: Tool projects
+    show_tool_project: Show tool project
+    edit_tool_project: Edit tool project
+    delete_tool_project: Delete tool project
+    new_tool_project: New tool project
+    time_slots: Time slots
+    show_time_slot: Show time slot
+    edit_time_slot: Edit time slot
+    delete_time_slot: Delete time slot
+    new_time_slot: New time slot
+    new_project: New project
+    tools: Tools
+    show_tool: Show tool
+    edit_tool: Edit tool
+    delete_tool: Delete tool
+    new_tool: New tool
