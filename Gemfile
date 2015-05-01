@@ -18,9 +18,9 @@ source 'https://rubygems.org' do
 
   # View
   gem 'redcarpet'
-  gem 'slim'
+  gem 'slim', '~> 3.0.3'
   gem 'simple-navigation'
-  gem 'roar-rails'
+  gem 'roar-rails', '~> 1.0.1'
 
   # Image
   gem 'carrierwave'
