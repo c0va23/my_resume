@@ -45,6 +45,9 @@ source 'https://rubygems.org' do
   # Config
   gem 'dotenv-rails'
 
+  # Error handling
+  gem 'rollbar', '~> 1.5.1'
+
   group :test do
     gem 'rspec-rails', '~> 2.14.0'
     gem 'factory_girl_rails'
