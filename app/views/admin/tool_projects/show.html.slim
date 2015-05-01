@@ -1,4 +1,8 @@
-h1 = t('.tool_project', default: 'Tool project "%{tool_name}"', tool_name: @tool_project.tool_name)
+h1 = t('.show_tool_project')
+
+dl
+  dt = ToolProject.human_attribute_name(:tool_name)
+  dd = @tool_project.tool_name
 
 dl
   dt = ToolProject.human_attribute_name(:version)

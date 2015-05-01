@@ -1,4 +1,8 @@
-h1 = t('.project', default: 'Project "%{name}"', name: @project.name)
+h1 = t('.show_project')
+
+dl
+  dt = Project.human_attribute_name(:name)
+  dd = @project.name
 
 dl
   dt = Project.human_attribute_name(:description)

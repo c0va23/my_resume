@@ -14,8 +14,11 @@ en:
       new:
         new_project: New project
       show:
-        project: Project
+        show_project: Show roject
+
     screenshots:
+      index:
+        screenshots: Screenshots
       form:
         save_screenshot: Save screenshot
       delete:
@@ -26,6 +29,7 @@ en:
         new_screenshot: New screenshot
       show:
         show_screenshot: Show screenshot
+
     time_slots:
       form:
         save_time_slot: Save time slot
@@ -39,7 +43,8 @@ en:
       new:
         new_time_slot: New time slot
       show:
-        time_slot: Time slot
+        show_time_slot: Show time slot
+
     tool_projects:
       form:
         save_tool_project: Save tool project
@@ -53,7 +58,8 @@ en:
       new:
         new_tool_project: New tool project
       show:
-        tool_project: Tool project
+        show_tool_project: Show ool project
+
     tools:
       form:
         save_tool: Save tool
@@ -68,45 +74,18 @@ en:
         new_tool: New tool
       show:
         show_tool: Show tool
+
     pages:
+      index:
+        pages: Pages
+      show:
+        show_page: "Show page «%{page_title}»"
       delete:
         delete_page: Delete page
         destroy_page: Destroy page
       form:
-        save: Save
+        save_page: Save page
       new:
         new_page: New page
       edit:
         edit_page: Edit page
-
-  admin_navigation:
-    projects: Projects
-    show_project: Show project
-    edit_project: Edit project
-    delete_project: Delete project
-    screenshots: Screenshots
-    show_screenshot: Show screenshot
-    edit_screenshot: Edit screenshot
-    delete_screenshot: Delete screenshot
-    new_screenshot: New screenshot
-    tool_projects: Tool projects
-    show_tool_project: Show tool project
-    edit_tool_project: Edit tool project
-    delete_tool_project: Delete tool project
-    new_tool_project: New tool project
-    time_slots: Time slots
-    show_time_slot: Show time slot
-    edit_time_slot: Edit time slot
-    delete_time_slot: Delete time slot
-    new_time_slot: New time slot
-    new_project: New project
-    tools: Tools
-    show_tool: Show tool
-    edit_tool: Edit tool
-    delete_tool: Delete tool
-    new_tool: New tool
-    pages: Pages
-    delete_page: Delete page
-    edit_page: Edit page
-    new_page: New page
-    show_page: Show page

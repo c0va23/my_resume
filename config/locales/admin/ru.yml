@@ -14,8 +14,11 @@ ru:
       new:
         new_project: Новый проект
       show:
-        project: Проект
+        show_project: Показать проект
+
     screenshots:
+      index:
+        screenshots: Скриншоты
       form:
         save_screenshot: Сохранить скриншот
       delete:
@@ -26,6 +29,7 @@ ru:
         new_screenshot: Новый скриншот
       show:
         show_screenshot: Показать скриншот
+
     time_slots:
       form:
         save_time_slot: Сохранить временный слот
@@ -39,7 +43,8 @@ ru:
       new:
         new_time_slot: Новый временный слот
       show:
-        time_slot: Показать временный слот
+        show_time_slot: Показать временный слот
+
     tool_projects:
       form:
         save_tool_project: Сохранить инструмент проекта
@@ -53,7 +58,8 @@ ru:
       new:
         new_tool_project: Новый инструмент проекта
       show:
-        tool_project: Интструмент проекта
+        show_tool_project: Показать интструмент проекта
+
     tools:
       form:
         save_tool: Сохранить инструмент
@@ -68,45 +74,18 @@ ru:
         new_tool: Новый инструмент
       show:
         show_tool: Показать инструмент
+
     pages:
+      index:
+        pages: Страницы
+      show:
+        show_page: "Показать страницу"
       delete:
         delete_page: Удалить страницу
         destroy_page: Уничтожить страницу
       form:
-        save: Сохранить
+        save_page: Сохранить страницу
       new:
         new_page: Новая страница
       edit:
         edit_page: Редактировать страницу
-
-  admin_navigation:
-    projects: Проекты
-    show_project: Показать проект
-    edit_project: Редактировать проект
-    delete_project: Удалить проект
-    screenshots: Скриншоты
-    show_screenshot: Показать скриншот
-    edit_screenshot: Редактировать скриншот
-    delete_screenshot: Удалить скриншот
-    new_screenshot: Новый скриншот
-    tool_projects: Интструменты проекта
-    show_tool_project: Показать инструмент проекта
-    edit_tool_project: Редактировать инструмент проекта
-    delete_tool_project: Удалить инструмент проекта
-    new_tool_project: Новый инструмент проекта
-    time_slots: Временные слоты
-    show_time_slot: Показать временный слот
-    edit_time_slot: Редактировать временный слот
-    delete_time_slot: Удалить временный слот
-    new_time_slot: Новый временный слот
-    new_project: Новый проект
-    tools: Интструменты
-    show_tool: Показать инструмент
-    edit_tool: Редактировать инструмент
-    delete_tool: Удалить инструмент
-    new_tool: Новый инструмент
-    pages: Страницы
-    delete_page: Удалить страницу
-    edit_page: Редактировать страницу
-    new_page: Новая страница
-    show_page: Показать страницу

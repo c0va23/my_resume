@@ -1,4 +1,4 @@
-h1 = t('.time_slot', default: 'Time slot "%{started_at}" — "%{ended_at}"', started_at: @time_slot.started_at, ended_at: @time_slot.ended_at)
+h1 = t('.show_time_slot')
 
 dl
   dt = TimeSlot.human_attribute_name(:started_at)
