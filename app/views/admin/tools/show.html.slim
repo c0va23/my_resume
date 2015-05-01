@@ -3,3 +3,7 @@ h1= t('.show_tool')
 dl
   dt= Tool.human_attribute_name(:name)
   dd= @tool.name
+
+dl
+  dt= Tool.human_attribute_name(:tool_type_id)
+  dd= @tool.tool_type_name

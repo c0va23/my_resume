@@ -2,8 +2,15 @@
   = render 'admin/shared/errors', object: @tool
 
   .form-group
+    / i18n-tasks-use t('activerecord.attributes.tool.name')
     = form.label :name
     = form.text_field :name, class: 'form-control'
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.tool.tool_type_id')
+    = form.label :tool_type_id
+    = form.collection_select :tool_type_id, ToolType.all, :id, :name,
+      { include_blank: true }, { class: 'form-control' }
 
   .form-group
     = form.button t('.save_tool'), class: 'btn btn-default form-control'

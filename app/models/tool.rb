@@ -9,6 +9,8 @@ class Tool < ActiveRecord::Base
   has_many :projects, through: :tool_projects
   has_many :time_slots, through: :projects
 
+  delegate :name, to: :tool_type, prefix: true, allow_nil: true
+
   def self.available_for(tool_project)
     used_tools = tool_project.project.tools.where.not(id: tool_project.tool_id)
     self.where.not(id: used_tools.select(Tool.arel_table[:id]))

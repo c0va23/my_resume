@@ -6,7 +6,13 @@ table.table
       / i18n-tasks-use t('activerecord.attributes.tool.name')
       th= Tool.human_attribute_name(:name)
 
+      / i18n-tasks-use t('activerecord.attributes.tool.tool_type_id')
+      th= Tool.human_attribute_name(:tool_type_id)
+
   tbody
     - @tools.each do |tool|
       tr
         td= link_to tool.name, [ :admin, tool ]
+        td
+          - if tool.tool_type
+            = link_to tool.tool_type_name, [ :admin, tool.tool_type ]

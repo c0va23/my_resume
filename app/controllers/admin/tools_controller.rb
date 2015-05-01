@@ -43,7 +43,7 @@ class Admin::ToolsController < Admin::BaseController
 protected
 
   def tool_params
-    params.require(:tool).permit(:name)
+    params.require(:tool).permit(:name, :tool_type_id)
   end
 
   def find_tool
