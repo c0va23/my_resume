@@ -9,8 +9,6 @@ data:
   write:
   - config/locales/*/%{locale}.yml
   base_locale: en
-relative_roots:
-- app/views
 search:
   scanner: I18n::Tasks::Scanners::PatternWithScopeScanner
   relative_roots:
