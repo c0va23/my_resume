@@ -1,6 +1,7 @@
 table.table
   thead
     tr
+      / i18n-tasks-use t('activerecord.attributes.page.title')
       th = Page.human_attribute_name(:title)
   tbody
     - @pages.each do |page|

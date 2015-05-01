@@ -3,6 +3,7 @@ h1= t('.tools')
 table.table
   thead
     tr
+      / i18n-tasks-use t('activerecord.attributes.tool.name')
       th= Tool.human_attribute_name(:name)
 
   tbody

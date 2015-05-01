@@ -1,0 +1,8 @@
+---
+ru:
+  activerecord:
+    attributes:
+      page:
+        title: Заголовок
+      tool:
+        name: Название

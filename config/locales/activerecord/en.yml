@@ -1,0 +1,8 @@
+---
+en:
+  activerecord:
+    attributes:
+      page:
+        title: Title
+      tool:
+        name: Name
