@@ -9,7 +9,7 @@ class Admin::ToolsController < Admin::BaseController
   end
 
   def index
-    @tools = Tool.order(:name).all
+    @tools = Tool.order(:name).preload(:tool_type).all
     respond_with @tools
   end
 
