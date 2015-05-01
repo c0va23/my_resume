@@ -4,11 +4,12 @@ locales:
 - ru
 data:
   adapter: I18n::Tasks::Data::FileSystem
+  router: pattern_router
   read:
   - config/locales/*/%{locale}.yml
   write:
-  - config/locales/*/%{locale}.yml
-  base_locale: en
+  - [ '{activerecord,admin}.*', 'config/locales/\1/%{locale}.yml' ]
+  - config/locales/view/%{locale}.yml
 search:
   scanner: I18n::Tasks::Scanners::PatternWithScopeScanner
   relative_roots:
