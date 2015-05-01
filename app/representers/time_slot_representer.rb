@@ -1,5 +1,5 @@
 module TimeSlotRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
   include ActionView::Helpers::TagHelper
 
   property :started_at_aligned, as: :start
