@@ -9,7 +9,7 @@ Resume for one developer.
 ## Tools
 
 * rails 4.1
-* ruby 2.1
+* ruby 2.2
 
 ## Environment variables
 
@@ -18,6 +18,7 @@ Resume for one developer.
 * `CLOUDINARY_URL` — configuration url for Cloudinary (start with "cloudinary://").
 * `SECRET_KEY_BASE` — need only for production environment (see file `config/secret.rb`).
 * `YANDEX_METRIKA_COUNTER_ID` — Yandex.Metrika counter ID.
+* `ROLLBAR_ACCESS_TOKEN` — access token for Rollbar.
 
 ## Demo
 
