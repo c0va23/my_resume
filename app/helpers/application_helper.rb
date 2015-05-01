@@ -1,6 +1,9 @@
 module ApplicationHelper
 
   def format_period(period)
+    # i18n-tasks-use t('application_helper.years')
+    # i18n-tasks-use t('application_helper.months')
+    # i18n-tasks-use t('application_helper.weeks')
     { years: 365.days, months: 30.days, weeks: 7.days }.each_with_object([]) do |(key, multiplier), list|
       count = (period / multiplier).floor
       if count > 0
