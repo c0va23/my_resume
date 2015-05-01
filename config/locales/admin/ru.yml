@@ -68,6 +68,17 @@ ru:
         new_tool: Новый инструмент
       show:
         show_tool: Показать инструмент
+    pages:
+      delete:
+        delete_page: Удалить страницу
+        destroy_page: Уничтожить страницу
+      form:
+        save: Сохранить
+      new:
+        new_page: Новая страница
+      edit:
+        edit_page: Редактировать страницу
+
   admin_navigation:
     projects: Проекты
     show_project: Показать проект
@@ -94,3 +105,8 @@ ru:
     edit_tool: Редактировать инструмент
     delete_tool: Удалить инструмент
     new_tool: Новый инструмент
+    pages: Страницы
+    delete_page: Удалить страницу
+    edit_page: Редактировать страницу
+    new_page: Новая страница
+    show_page: Показать страницу

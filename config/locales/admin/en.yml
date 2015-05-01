@@ -68,6 +68,16 @@ en:
         new_tool: New tool
       show:
         show_tool: Show tool
+    pages:
+      delete:
+        delete_page: Delete page
+        destroy_page: Destroy page
+      form:
+        save: Save
+      new:
+        new_page: New page
+      edit:
+        edit_page: Edit page
 
   admin_navigation:
     projects: Projects
@@ -95,3 +105,8 @@ en:
     edit_tool: Edit tool
     delete_tool: Delete tool
     new_tool: New tool
+    pages: Pages
+    delete_page: Delete page
+    edit_page: Edit page
+    new_page: New page
+    show_page: Show page
