@@ -6,3 +6,5 @@ ru:
         title: Заголовок
       tool:
         name: Название
+      tool_type:
+        name: "Название"

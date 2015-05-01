@@ -6,3 +6,5 @@ en:
         title: Title
       tool:
         name: Name
+      tool_type:
+        name: Name

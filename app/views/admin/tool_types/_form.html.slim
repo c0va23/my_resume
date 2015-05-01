@@ -1,0 +1,11 @@
+= form_for [ :admin, @tool_type ], class: 'form' do |form|
+
+  = render 'admin/shared/errors', object: @tool_type
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.tool_type.name')
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
+
+  .form-group
+    = form.button t('.save_tool_type'), class: 'btn btn-primary'

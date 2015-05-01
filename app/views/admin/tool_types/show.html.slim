@@ -1,0 +1,6 @@
+h1 = t(".show_tool_type")
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.tool_type.name')
+  dt = ToolType.human_attribute_name(:name)
+  dd = @tool_type.name

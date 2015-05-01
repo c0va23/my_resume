@@ -70,6 +70,20 @@ en:
         new_tool_project: New tool project
       show:
         show_tool_project: Show ool project
+    tool_types:
+      delete:
+        delete_tool_type: Delete tool type
+        destroy_tool_type: Destroy tool type
+      edit:
+        edit_tool_type: Edit tool type
+      form:
+        save_tool_type: Save tool type
+      index:
+        tool_types: Tool types
+      new:
+        new_tool_type: New tool type
+      show:
+        show_tool_type: Show tool type
     tools:
       delete:
         delete: Delete

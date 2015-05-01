@@ -70,6 +70,20 @@ ru:
         new_tool_project: "Новый инструмент проекта"
       show:
         show_tool_project: "Показать интструмент проекта"
+    tool_types:
+      delete:
+        delete_tool_type: "Удалить тип инструментов"
+        destroy_tool_type: "Уничтожить тип инструментов"
+      edit:
+        edit_tool_type: "Редактировать тип инструментов"
+      form:
+        save_tool_type: "Сохранить тип инструментов"
+      index:
+        tool_types: "Типы инструментов"
+      new:
+        new_tool_type: "Новый тип инструментов"
+      show:
+        show_tool_type: "Показать тип инструментов"
     tools:
       delete:
         delete: "Удалить"
