@@ -1,91 +1,86 @@
 ---
 ru:
   admin:
-    projects:
-      form:
-        save_project: Сохранить проект
-      delete:
-        delete_project: Удалить проект
-        destroy_project: Уничтожить проект
-      edit:
-        edit_project: Редактировать проект
-      index:
-        projects: Проекты
-      new:
-        new_project: Новый проект
-      show:
-        show_project: Показать проект
-
-    screenshots:
-      index:
-        screenshots: Скриншоты
-      form:
-        save_screenshot: Сохранить скриншот
-      delete:
-        delete_screenshot: Удалить скриншот
-      edit:
-        edit_screenshot: Редактировать скриншот
-      new:
-        new_screenshot: Новый скриншот
-      show:
-        show_screenshot: Показать скриншот
-
-    time_slots:
-      form:
-        save_time_slot: Сохранить временный слот
-      delete:
-        delete_time_slot: Удалить временный слот
-        destroy_time_slot: Уничтожить временный слот
-      edit:
-        edit_time_slot: Редактировать временный слот
-      index:
-        time_slots: Временные слоты
-      new:
-        new_time_slot: Новый временный слот
-      show:
-        show_time_slot: Показать временный слот
-
-    tool_projects:
-      form:
-        save_tool_project: Сохранить инструмент проекта
-      delete:
-        delete_tool_project: Удалить инструмент проекта
-        destroy_tool_project: Уничтожить инструмент проекта
-      edit:
-        edit_tool_project: Редактировать инструмент проекта
-      index:
-        tool_projects: Интструменты проекта
-      new:
-        new_tool_project: Новый инструмент проекта
-      show:
-        show_tool_project: Показать интструмент проекта
-
-    tools:
-      form:
-        save_tool: Сохранить инструмент
-      delete:
-        delete_tool: Удалить инструмент
-        delete: Удалить
-      edit:
-        edit_tool: Редактировать инструмент
-      index:
-        tools: Интструменты
-      new:
-        new_tool: Новый инструмент
-      show:
-        show_tool: Показать инструмент
-
     pages:
+      delete:
+        delete_page: "Удалить страницу"
+        destroy_page: "Уничтожить страницу"
+      edit:
+        edit_page: "Редактировать страницу"
+      form:
+        save_page: "Сохранить страницу"
       index:
-        pages: Страницы
+        pages: "Страницы"
+      new:
+        new_page: "Новая страница"
       show:
         show_page: "Показать страницу"
+    projects:
       delete:
-        delete_page: Удалить страницу
-        destroy_page: Уничтожить страницу
-      form:
-        save_page: Сохранить страницу
-      new:
-        new_page: Новая страница
+        delete_project: "Удалить проект"
+        destroy_project: "Уничтожить проект"
       edit:
-        edit_page: Редактировать страницу
+        edit_project: "Редактировать проект"
+      form:
+        save_project: "Сохранить проект"
+      index:
+        projects: "Проекты"
+      new:
+        new_project: "Новый проект"
+      show:
+        show_project: "Показать проект"
+    screenshots:
+      delete:
+        delete_screenshot: "Удалить скриншот"
+      edit:
+        edit_screenshot: "Редактировать скриншот"
+      form:
+        save_screenshot: "Сохранить скриншот"
+      index:
+        screenshots: "Скриншоты"
+      new:
+        new_screenshot: "Новый скриншот"
+      show:
+        show_screenshot: "Показать скриншот"
+    time_slots:
+      delete:
+        delete_time_slot: "Удалить временный слот"
+        destroy_time_slot: "Уничтожить временный слот"
+      edit:
+        edit_time_slot: "Редактировать временный слот"
+      form:
+        save_time_slot: "Сохранить временный слот"
+      index:
+        time_slots: "Временные слоты"
+      new:
+        new_time_slot: "Новый временный слот"
+      show:
+        show_time_slot: "Показать временный слот"
+    tool_projects:
+      delete:
+        delete_tool_project: "Удалить инструмент проекта"
+        destroy_tool_project: "Уничтожить инструмент проекта"
+      edit:
+        edit_tool_project: "Редактировать инструмент проекта"
+      form:
+        save_tool_project: "Сохранить инструмент проекта"
+      index:
+        tool_projects: "Интструменты проекта"
+      new:
+        new_tool_project: "Новый инструмент проекта"
+      show:
+        show_tool_project: "Показать интструмент проекта"
+    tools:
+      delete:
+        delete: "Удалить"
+        delete_tool: "Удалить инструмент"
+      edit:
+        edit_tool: "Редактировать инструмент"
+      form:
+        save_tool: "Сохранить инструмент"
+      index:
+        tools: "Интструменты"
+      new:
+        new_tool: "Новый инструмент"
+      show:
+        show_tool: "Показать инструмент"

@@ -1,91 +1,86 @@
 ---
 en:
   admin:
-    projects:
+    pages:
+      delete:
+        delete_page: Delete page
+        destroy_page: Destroy page
+      edit:
+        edit_page: Edit page
       form:
-        save_project: Save project
+        save_page: Save page
+      index:
+        pages: Pages
+      new:
+        new_page: New page
+      show:
+        show_page: Show page
+    projects:
       delete:
         delete_project: Delete project
         destroy_project: Destroy project
       edit:
         edit_project: Edit project
+      form:
+        save_project: Save project
       index:
         projects: Projects
       new:
         new_project: New project
       show:
         show_project: Show roject
-
     screenshots:
-      index:
-        screenshots: Screenshots
-      form:
-        save_screenshot: Save screenshot
       delete:
         delete_screenshot: Delete screenshot
       edit:
         edit_screenshot: Edit screenshot
+      form:
+        save_screenshot: Save screenshot
+      index:
+        screenshots: Screenshots
       new:
         new_screenshot: New screenshot
       show:
         show_screenshot: Show screenshot
-
     time_slots:
-      form:
-        save_time_slot: Save time slot
       delete:
         delete_time_slot: Delete time slot
         destroy_time_slot: Destroy time slot
       edit:
         edit_time_slot: Edit time slot
+      form:
+        save_time_slot: Save time slot
       index:
         time_slots: Time slots
       new:
         new_time_slot: New time slot
       show:
         show_time_slot: Show time slot
-
     tool_projects:
-      form:
-        save_tool_project: Save tool project
       delete:
         delete_tool_project: Delete tool project
         destroy_tool_project: Destroy tool project
       edit:
         edit_tool_project: Edit tool project
+      form:
+        save_tool_project: Save tool project
       index:
         tool_projects: Tool projects
       new:
         new_tool_project: New tool project
       show:
         show_tool_project: Show ool project
-
     tools:
-      form:
-        save_tool: Save tool
       delete:
-        delete_tool: Delete tool
         delete: Delete
+        delete_tool: Delete tool
       edit:
         edit_tool: Edit tool
+      form:
+        save_tool: Save tool
       index:
         tools: Tools
       new:
         new_tool: New tool
       show:
         show_tool: Show tool
-
-    pages:
-      index:
-        pages: Pages
-      show:
-        show_page: "Show page «%{page_title}»"
-      delete:
-        delete_page: Delete page
-        destroy_page: Destroy page
-      form:
-        save_page: Save page
-      new:
-        new_page: New page
-      edit:
-        edit_page: Edit page

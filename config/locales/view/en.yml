@@ -1,55 +1,56 @@
+---
 en:
   application_helper:
-    weeks:
-      one: '%{count} week'
-      other: '%{count} weeks'
     months:
-      one: '%{count} month'
-      other: '%{count} months'
+      one: "%{count} month"
+      other: "%{count} months"
+    weeks:
+      one: "%{count} week"
+      other: "%{count} weeks"
     years:
-      one: '%{count} year'
-      other: '%{count} years'
+      one: "%{count} year"
+      other: "%{count} years"
   layouts:
     admin:
       home: Home
   main:
     index:
+      all_experience: All experience
       my_projects: My projects
-      all_experience: 'All experience'
+  pages:
+    index:
+      pages: Pages
   projects:
     index:
       projects: Projects
     show:
-      project: 'Project "%{project_name}"'
-      description: 'Description'
-      role: 'Role'
-      screenshots: 'Screenshots'
-      no_screenshots: 'No screenshots'
-      tools: 'Tools'
-      no_tools: 'No tools'
-      time_slots: 'Time slots'
-      total_period: 'Total period'
+      description: Description
+      no_screenshots: No screenshots
+      no_tools: No tools
+      project: Project "%{project_name}"
+      role: Role
+      screenshots: Screenshots
+      time_slots: Time slots
+      tools: Tools
+      total_period: Total period
   shared:
     timeline:
-      filter: 'Filter'
+      filter: Filter
   tools:
-    versions:
-      version: 'Version'
-      period: 'Period'
-      proportion: 'Proportion'
     index:
-      tools: 'Tools'
+      tools: Tools
     show:
-      tool: 'Tool "%{tool_name}"'
-      versions: 'Versions'
-      time_slots: 'Time slots'
-      total_period: 'Total period'
-      projects: 'Projects'
-  pages:
-    index:
-      pages: 'Pages'
+      projects: Projects
+      time_slots: Time slots
+      tool: Tool "%{tool_name}"
+      total_period: Total period
+      versions: Versions
+    versions:
+      period: Period
+      proportion: Proportion
+      version: Version
   user_navigation:
-    main_page: 'Main page'
-    projects: 'Pprojects'
-    tools: 'Tools'
-    pages: 'Pages'
+    main_page: Main page
+    pages: Pages
+    projects: Pprojects
+    tools: Tools

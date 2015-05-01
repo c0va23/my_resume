@@ -1,58 +1,59 @@
+---
 ru:
   application_helper:
-    weeks:
-      one: '%{count} неделя'
-      few: '%{count} недели'
-      many: '%{count} недель'
     months:
-      one: '%{count} месяц'
-      few: '%{count} месяцев'
-      many: '%{count} месяцев'
+      few: "%{count} месяцев"
+      many: "%{count} месяцев"
+      one: "%{count} месяц"
+    weeks:
+      few: "%{count} недели"
+      many: "%{count} недель"
+      one: "%{count} неделя"
     years:
-      one: '%{count} год'
-      few: '%{count} года'
-      many: '%{count} лет'
+      few: "%{count} года"
+      many: "%{count} лет"
+      one: "%{count} год"
   layouts:
     admin:
-      home: 'Дом'
+      home: "Дом"
   main:
     index:
-      my_projects: 'Мои проекты'
-      all_experience: 'Всего опыта'
-  projects:
-    index:
-      projects: 'Проекты'
-    show:
-      project: 'Проект "%{project_name}"'
-      description: 'Описание'
-      role: 'Роль'
-      screenshots: 'Скриншоты'
-      no_screenshots: 'Нет скриншотов'
-      tools: 'Инструменты'
-      no_tools: 'Нет инструментов'
-      time_slots: 'Временные слоты'
-      total_period: 'Общая продолжительность'
-  shared:
-    timeline:
-      filter: 'Фильтр'
-  tools:
-    versions:
-      version: 'Версия'
-      period: 'Продолжительность'
-      proportion: 'Доля'
-    index:
-      tools: 'Инструменты'
-    show:
-      tool: 'Инструмент "%{tool_name}"'
-      versions: 'Версии'
-      time_slots: 'Временные слоты'
-      total_period: 'Общая продолжительность'
-      projects: 'Проекты'
+      all_experience: "Всего опыта"
+      my_projects: "Мои проекты"
   pages:
     index:
-      pages: 'Страницы'
+      pages: "Страницы"
+  projects:
+    index:
+      projects: "Проекты"
+    show:
+      description: "Описание"
+      no_screenshots: "Нет скриншотов"
+      no_tools: "Нет инструментов"
+      project: Проект "%{project_name}"
+      role: "Роль"
+      screenshots: "Скриншоты"
+      time_slots: "Временные слоты"
+      tools: "Инструменты"
+      total_period: "Общая продолжительность"
+  shared:
+    timeline:
+      filter: "Фильтр"
+  tools:
+    index:
+      tools: "Инструменты"
+    show:
+      projects: "Проекты"
+      time_slots: "Временные слоты"
+      tool: Инструмент "%{tool_name}"
+      total_period: "Общая продолжительность"
+      versions: "Версии"
+    versions:
+      period: "Продолжительность"
+      proportion: "Доля"
+      version: "Версия"
   user_navigation:
-    main_page: 'Главная страница'
-    projects: 'Проекты'
-    tools: 'Инструменты'
-    pages: 'Страницы'
+    main_page: "Главная страница"
+    pages: "Страницы"
+    projects: "Проекты"
+    tools: "Инструменты"
