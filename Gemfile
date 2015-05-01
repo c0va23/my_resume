@@ -1,4 +1,4 @@
-ruby File.read(File.join(__dir__, '.ruby-version'))
+ruby "2.2.2"
 
 source 'https://rubygems.org' do
 
