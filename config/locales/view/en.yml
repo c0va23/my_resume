@@ -38,6 +38,7 @@ en:
       filter: Filter
   tools:
     index:
+      other_tool_type: Other
       tools: Tools
     show:
       projects: Projects

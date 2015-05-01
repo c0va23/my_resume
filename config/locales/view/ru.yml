@@ -41,6 +41,7 @@ ru:
       filter: "Фильтр"
   tools:
     index:
+      other_tool_type: "Другое"
       tools: "Инструменты"
     show:
       projects: "Проекты"

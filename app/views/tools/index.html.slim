@@ -1,6 +1,8 @@
 h1 = t('.tools')
 
-- @tools.in_groups_of(4) do |tools_group|
+- @tools.group_by(&:tool_type_id).each do |_, type_tools|
+  h2 = type_tools.first.tool_type_name || t(".other_tool_type")
+
   .row
-    - tools_group.each do |tool|
+    - type_tools.each do |tool|
       = render tool
