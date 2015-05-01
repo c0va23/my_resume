@@ -56,6 +56,7 @@ source 'https://rubygems.org' do
   group :development do
     gem 'quiet_assets'
     gem 'i18n-tasks'
+    gem 'pry-rails'
   end
 
   group :production do
