@@ -36,7 +36,6 @@ source 'https://rubygems.org' do
 
   gem 'jquery-rails'
   gem 'turbolinks'
-  gem 'vis-rails'
   gem 'bootstrap-sass', '~> 3.1.0'
 
   # Server
@@ -71,4 +70,5 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-markdown', '~> 2.5'
   gem 'rails-assets-marked', '~> 0.3.2'
+  gem 'rails-assets-vis', '~> 3.12'
 end
