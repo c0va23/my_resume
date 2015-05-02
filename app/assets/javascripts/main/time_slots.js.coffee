@@ -13,7 +13,7 @@ class Timeline
 
   onDataLoaded: (data) =>
     @timeSlotDataSet = new vis.DataSet(data)
-    @timeline = new vis.Timeline(@container, @timeSlots(), stack: false, selectable: false)
+    @timeline = new vis.Timeline(@container, @timeSlots(), stack: false, selectable: false, zoomable: true)
 
   timeSlots: => 
     @timeSlotDataSet.get(filter: @timeSlotFilter(@selectedToolNames()))
