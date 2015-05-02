@@ -4,13 +4,14 @@ module ApplicationHelper
     # i18n-tasks-use t('application_helper.years')
     # i18n-tasks-use t('application_helper.months')
     # i18n-tasks-use t('application_helper.weeks')
-    { years: 365.days, months: 30.days, weeks: 7.days }.each_with_object([]) do |(key, multiplier), list|
-      count = (period / multiplier).floor
-      if count > 0
-        period = period - count * multiplier
-        list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
-      end
-    end.join(' ')
+    formated_period = { years: 365.days, months: 30.days, weeks: 7.days }
+      .each_with_object([]) do |(key, multiplier), list|
+        if (count = (period / multiplier).floor) > 0
+          period = period - count * multiplier
+          list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
+        end
+      end.join(' ')
+    formated_period.present? ? formated_period : '&nbsp;'.html_safe
   end
 
   def format_period_proportion(period, total_period)
