@@ -99,6 +99,20 @@ SimpleNavigation::Configuration.run do |navigation|
 
     end # tool_types
 
+    primary.item :contacts, t('admin.contacts.index.contacts'), admin_contacts_path, highlights_on: :subpath do |contacts_navigation|
+      contacts_navigation.dom_class = "nav nav-pills"
+      contacts_navigation.selected_class = "active"
+
+      if @contact.try(:persisted?)
+        contacts_navigation.item :show_contact, t('admin.contacts.show.show_contact'), admin_contact_path
+        contacts_navigation.item :edit_contact, t('admin.contacts.edit.edit_contact'), edit_admin_contact_path
+        contacts_navigation.item :delete_contact, t('admin.contacts.delete.delete_contact'), delete_admin_contact_path
+      else
+        contacts_navigation.item :new_tool_type, t('admin.contacts.new.new_contact'), new_admin_contact_path
+      end
+
+    end # contacts
+
   end
 
 end

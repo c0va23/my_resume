@@ -1,0 +1,14 @@
+h1 = t(".contacts")
+
+table.table
+  thead
+    tr
+      / i18n-tasks-use t('activerecord.attributes.contact.label')
+      th = Contact.human_attribute_name(:label)
+      / i18n-tasks-use t('activerecord.attributes.contact.url')
+      th = Contact.human_attribute_name(:url)
+
+    - @contacts.each do |contact|
+      tr
+        td= contact.label
+        td= link_to contact.url, contact.url
