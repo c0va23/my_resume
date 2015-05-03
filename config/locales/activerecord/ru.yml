@@ -5,6 +5,7 @@ ru:
       contact:
         label: "Метка"
         url: "Ссылка"
+        value: "Значение"
       page:
         title: "Заголовок"
       tool:

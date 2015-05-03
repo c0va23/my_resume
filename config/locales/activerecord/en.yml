@@ -5,6 +5,7 @@ en:
       contact:
         label: Label
         url: Url
+        value: Value
       page:
         title: Title
       tool:

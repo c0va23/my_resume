@@ -8,9 +8,13 @@
     = form.text_field :label, class: 'form-control'
 
   .form-group
-
     / i18n-tasks-use t('activerecord.attributes.contact.url')
     = form.label :url
     = form.url_field :url, class: 'form-control'
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.contact.value')
+    = form.label :value
+    = form.text_field :value, class: 'form-control'
 
   = form.button t('.save_contact'), class: 'btn btn-primary'
