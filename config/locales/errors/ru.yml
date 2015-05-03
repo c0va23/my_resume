@@ -2,4 +2,4 @@
 ru:
   errors:
     messages:
-      invalid_uri: не верная ссылка
+      invalid_uri: "не верная ссылка"

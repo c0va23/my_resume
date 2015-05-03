@@ -30,7 +30,7 @@ ru:
       description: "Описание"
       no_screenshots: "Нет скриншотов"
       no_tools: "Нет инструментов"
-      project: Проект "%{project_name}"
+      project: "Проект «%{project_name}»"
       role: "Роль"
       screenshots: "Скриншоты"
       time_slots: "Временные слоты"
@@ -46,7 +46,7 @@ ru:
     show:
       projects: "Проекты"
       time_slots: "Временные слоты"
-      tool: Инструмент "%{tool_name}"
+      tool: "Инструмент «%{tool_name}»"
       total_period: "Общая продолжительность"
       versions: "Версии"
     versions:

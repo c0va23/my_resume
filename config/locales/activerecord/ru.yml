@@ -3,9 +3,9 @@ ru:
   activerecord:
     attributes:
       page:
-        title: Заголовок
+        title: "Заголовок"
       tool:
-        name: Название
-        tool_type_id: Тип инструмента
+        name: "Название"
+        tool_type_id: "Тип инструмента"
       tool_type:
-        name: Название
+        name: "Название"
