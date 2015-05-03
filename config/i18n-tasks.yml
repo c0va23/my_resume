@@ -8,7 +8,7 @@ data:
   read:
   - config/locales/*/%{locale}.yml
   write:
-  - [ '{activerecord,admin}.*', 'config/locales/\1/%{locale}.yml' ]
+  - [ '{activerecord,admin,errors}.*', 'config/locales/\1/%{locale}.yml' ]
   - config/locales/view/%{locale}.yml
 search:
   scanner: I18n::Tasks::Scanners::PatternWithScopeScanner
