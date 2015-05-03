@@ -19,6 +19,7 @@ ru:
   main:
     index:
       all_experience: "Всего опыта"
+      my_contacts: "Мои контакты"
       my_projects: "Мои проекты"
   pages:
     index:
