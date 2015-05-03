@@ -27,4 +27,12 @@ module ApplicationHelper
     yandex_metrika_counter_id.present? && !Rails.env.development?
   end
 
+  def yandex_verification_code
+    ENV['YANDEX_VERIFICATION_CODE']
+  end
+
+  def yandex_verification_code?
+    yandex_verification_code.present?
+  end
+
 end

@@ -6,6 +6,8 @@ head
   = javascript_include_tag "main/application"
   = csrf_meta_tags
   meta name="viewport" content="width=device-width, initial-scale=1"
+  - if yandex_verification_code?
+    meta name='yandex-verification' content=yandex_verification_code
 body
   nav.navbar.navbar-default
     .container
