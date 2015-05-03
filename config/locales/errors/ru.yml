@@ -1,0 +1,5 @@
+---
+ru:
+  errors:
+    messages:
+      invalid_uri: не верная ссылка

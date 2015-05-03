@@ -1,0 +1,5 @@
+---
+en:
+  errors:
+    messages:
+      invalid_uri: invalid uri
