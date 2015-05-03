@@ -1,6 +1,20 @@
 ---
 ru:
   admin:
+    contacts:
+      delete:
+        delete_contact: "Удалить контакт"
+        destroy_contact: "Уничтожить контакт"
+      edit:
+        edit_contact: "Редактировать контакт"
+      form:
+        save_contact: "Сохранить контакт"
+      index:
+        contacts: "Контакты"
+      new:
+        new_contact: "Новый контакт"
+      show:
+        show_contact: "Показать контакт"
     pages:
       delete:
         delete_page: "Удалить страницу"

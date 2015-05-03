@@ -2,6 +2,9 @@
 ru:
   activerecord:
     attributes:
+      contact:
+        label: "Метка"
+        url: "Ссылка"
       page:
         title: "Заголовок"
       tool:

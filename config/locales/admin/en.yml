@@ -1,6 +1,20 @@
 ---
 en:
   admin:
+    contacts:
+      delete:
+        delete_contact: Delete contact
+        destroy_contact: Destroy contact
+      edit:
+        edit_contact: Edit contact
+      form:
+        save_contact: Save contact
+      index:
+        contacts: Contacts
+      new:
+        new_contact: New contact
+      show:
+        show_contact: Show contact
     pages:
       delete:
         delete_page: Delete page

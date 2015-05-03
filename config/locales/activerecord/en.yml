@@ -2,6 +2,9 @@
 en:
   activerecord:
     attributes:
+      contact:
+        label: Label
+        url: Url
       page:
         title: Title
       tool:
