@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  DEFAULT_SITE_NAME = "MyResume"
+
+  def site_name
+    ENV['SITE_NAME'] || DEFAULT_SITE_NAME
+  end
+
   def format_period(period)
     # i18n-tasks-use t('application_helper.years')
     # i18n-tasks-use t('application_helper.months')
