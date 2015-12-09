@@ -44,10 +44,8 @@ source 'https://rubygems.org' do
   # Config
   gem 'dotenv-rails'
 
-  group :production do
-    # Error handling
-    gem 'rollbar', '~> 1.5.1'
-  end
+  # Error handling
+  gem 'rollbar', '~> 2.6.3'
 
   group :test do
     gem 'rspec-rails', '~> 2.14.0'
