@@ -1,4 +1,4 @@
-ruby "2.2.2"
+ruby File.read('.ruby-version').strip
 
 source 'https://rubygems.org' do
 
