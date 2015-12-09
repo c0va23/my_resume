@@ -23,7 +23,7 @@ describe ApplicationHelper do
 
     context 'period = 3.days' do
       let(:period) { 3.days }
-      it { should be_empty }
+      it { should eq '&nbsp;'.html_safe }
     end
 
     context 'period = 1.month' do
