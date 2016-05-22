@@ -59,6 +59,7 @@ source 'https://rubygems.org' do
     gem 'quiet_assets'
     gem 'i18n-tasks'
     gem 'pry-rails'
+    gem 'rubocop'
   end
 
   group :production do
