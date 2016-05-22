@@ -10,7 +10,7 @@ module VersionsHelper
   def render_version_graphic(versions)
     total_period = versions.map(&:period).sum
     end_angel = 0.0
-    versions.each_with_index do |version, index|
+    versions.each do |version|
       proportion = version.period / total_period
       start_engel = end_angel
       end_angel += proportion * DEG_IN_PI * 2
@@ -26,13 +26,17 @@ module VersionsHelper
     end
   end
 
-protected
+  protected
+
   def deg_to_rad(deg)
-    DEG_IN_PI ** -1 * Math::PI * deg
+    DEG_IN_PI**-1 * Math::PI * deg
   end
 
   def coors(angel_rad)
-    [ coor_x(angel_rad), coor_y(angel_rad) ]
+    [
+      coor_x(angel_rad),
+      coor_y(angel_rad)
+    ]
   end
 
   def coor_x(angel_rad)
@@ -56,7 +60,7 @@ protected
   end
 
   def close_path
-    "Z"
+    'Z'
   end
 
   def render_circle(options)
