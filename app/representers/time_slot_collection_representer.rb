@@ -3,5 +3,4 @@ module TimeSlotCollectionRepresenter
   include Representable::JSON::Collection
 
   items extend: TimeSlotRepresenter
-
 end
