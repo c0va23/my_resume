@@ -1,7 +1,8 @@
-class Admin::BaseController < ApplicationController
-  include Admin::Authentication
-  include Admin::NavigationHelpers
+module Admin
+  class BaseController < ApplicationController
+    include Admin::Authentication
+    include Admin::NavigationHelpers
 
-  layout 'admin'
-
+    layout 'admin'
+  end
 end

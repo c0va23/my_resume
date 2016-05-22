@@ -1,19 +1,20 @@
-module Admin::Authentication
-  extend ActiveSupport::Concern
+module Admin
+  module Authentication
+    extend ActiveSupport::Concern
 
-  USERNAME = ENV['ADMIN_USERNAME'] || 'admin'
-  PASSWORD = ENV['ADMIN_PASSWORD']
+    USERNAME = ENV['ADMIN_USERNAME'] || 'admin'
+    PASSWORD = ENV['ADMIN_PASSWORD']
 
-  included do
-    before_action :authenticate
-  end
+    included do
+      before_action :authenticate
+    end
 
-protected
+    protected
 
-  def authenticate
-    authenticate_or_request_with_http_basic 'MyResume' do |username, password|
-      USERNAME == username && PASSWORD == password
+    def authenticate
+      authenticate_or_request_with_http_basic 'MyResume' do |username, password|
+        USERNAME == username && PASSWORD == password
+      end
     end
   end
-
 end
