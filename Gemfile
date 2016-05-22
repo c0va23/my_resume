@@ -38,7 +38,7 @@ source 'https://rubygems.org' do
   gem 'bootstrap-sass', '~> 3.1.0'
 
   # Server
-  gem 'puma', '~> 2.15'
+  gem 'puma', '~> 3.4'
 
   # Config
   gem 'dotenv-rails'
