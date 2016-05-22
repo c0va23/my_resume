@@ -58,15 +58,14 @@ describe Tool do
     let(:project1) { tool_project1.project }
     let(:project2) { tool_project2.project }
     let(:project3) { tool_project3.project }
-    let!(:time_slot1) { create(:time_slot, project: project1, started_at: 2.week.ago, ended_at: 1.week.ago) }
-    let!(:time_slot2) { create(:time_slot, project: project2, started_at: 4.week.ago, ended_at: 3.week.ago) }
-    let!(:time_slot3) { create(:time_slot, project: project3, started_at: 6.week.ago, ended_at: 5.week.ago) }
-    let!(:time_slot4) { create(:time_slot, project: project3, started_at: 8.week.ago, ended_at: 7.week.ago) }
+    let!(:time_slot1) { create(:time_slot, project: project1, started_at: 2.weeks.ago, ended_at: 1.week.ago) }
+    let!(:time_slot2) { create(:time_slot, project: project2, started_at: 4.weeks.ago, ended_at: 3.weeks.ago) }
+    let!(:time_slot3) { create(:time_slot, project: project3, started_at: 6.weeks.ago, ended_at: 5.weeks.ago) }
+    let!(:time_slot4) { create(:time_slot, project: project3, started_at: 8.weeks.ago, ended_at: 7.weeks.ago) }
 
     subject { tool.versions }
 
     it { should include(::Tool::Version.new(version1, time_slot1.period + time_slot2.period)) }
     it { should include(::Tool::Version.new(version2, time_slot3.period + time_slot4.period)) }
-
   end
 end

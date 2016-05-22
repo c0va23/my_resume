@@ -14,7 +14,7 @@ FactoryGirl.define do
   end
 
   factory :time_slot do
-    started_at { 2.month.ago }
+    started_at { 2.months.ago }
     ended_at { 1.month.ago }
     project
   end

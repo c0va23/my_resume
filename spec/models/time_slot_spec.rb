@@ -20,7 +20,7 @@ describe TimeSlot do
   end
 
   describe 'validate date range' do
-    let!(:other_time_slot) { create(:time_slot, started_at: 2.week.ago, ended_at: 2.week.since) }
+    let!(:other_time_slot) { create(:time_slot, started_at: 2.weeks.ago, ended_at: 2.weeks.since) }
 
     before { subject.valid? }
 
@@ -55,13 +55,21 @@ describe TimeSlot do
     end
 
     context 'left border crossing' do
-      subject { build(:time_slot, started_at: other_time_slot.ended_at + 1.day, ended_at: other_time_slot.ended_at + 1.week) }
+      subject do
+        build :time_slot,
+              started_at: other_time_slot.ended_at + 1.day,
+              ended_at: other_time_slot.ended_at + 1.week
+      end
 
       its(:errors) { should_not have_key(:date_range) }
     end
 
     context 'rigth border crossing' do
-      subject { build(:time_slot, started_at: other_time_slot.started_at - 1.week, ended_at: other_time_slot.started_at - 1.day) }
+      subject do
+        build :time_slot,
+              started_at: other_time_slot.started_at - 1.week,
+              ended_at: other_time_slot.started_at - 1.day
+      end
 
       its(:errors) { should_not have_key(:date_range) }
     end
@@ -87,7 +95,7 @@ describe TimeSlot do
     context 'with ended_at' do
       let(:time_slot) { build(:time_slot, started_at: 1.week.ago, ended_at: 1.week.since) }
 
-      it { should == 2.week }
+      it { should == 2.weeks }
     end
 
     context 'wihtout ended_at' do

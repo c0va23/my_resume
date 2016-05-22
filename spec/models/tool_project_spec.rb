@@ -12,6 +12,6 @@ describe ToolProject do
     let(:tool) { create(:tool) }
     subject { create(:tool_project, tool: tool) }
 
-    its(:tool_name) { should eq tool.name}
+    its(:tool_name) { should eq tool.name }
   end
 end

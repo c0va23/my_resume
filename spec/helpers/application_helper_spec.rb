@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-
   describe '#format_period' do
     around(:each) do |example|
       I18n.with_locale(:en, &example)
@@ -17,7 +16,7 @@ describe ApplicationHelper do
     end
 
     context 'period = 3.week' do
-      let(:period) { 3.week }
+      let(:period) { 3.weeks }
       it { should == '3 weeks' }
     end
 
@@ -51,5 +50,4 @@ describe ApplicationHelper do
       it { should == '2 years 5 months 3 weeks' }
     end
   end
-
 end
