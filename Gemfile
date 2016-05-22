@@ -1,7 +1,6 @@
 ruby File.read('.ruby-version').strip
 
 source 'https://rubygems.org' do
-
   platforms :rbx do
     gem 'rubysl'
     gem 'rubysl-test-unit', require: false
@@ -65,7 +64,6 @@ source 'https://rubygems.org' do
   group :production do
     gem 'rails_12factor'
   end
-
 end
 
 source 'https://rails-assets.org' do
