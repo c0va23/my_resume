@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   respond_to :html
 
   def index
@@ -11,5 +10,4 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     respond_with @page
   end
-
 end

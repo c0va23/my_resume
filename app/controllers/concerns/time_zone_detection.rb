@@ -5,14 +5,11 @@ module TimeZoneDetection
     around_action :set_time_zone
   end
 
-protected
+  protected
 
   def set_time_zone
-    if time_zone = request.headers['Time-Zone']
-      Time.use_zone(time_zone.to_i) { yield }
-    else
-      yield
-    end
+    time_zone = request.headers['Time-Zone']
+    return yield if time_zone.blank?
+    Time.use_zone(time_zone.to_i) { yield }
   end
-
 end

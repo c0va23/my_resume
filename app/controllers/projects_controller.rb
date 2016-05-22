@@ -10,5 +10,4 @@ class ProjectsController < ApplicationController
     @projects = Project.order(:name).all
     respond_with @projects
   end
-
 end

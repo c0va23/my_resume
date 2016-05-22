@@ -8,7 +8,7 @@ module LocaleDetection
     before_action :set_locale_param
   end
 
-protected
+  protected
 
   def header_locale
     if request.headers.key?('HTTP_ACCEPT_LANGUAGE')
@@ -30,11 +30,10 @@ protected
   end
 
   def set_locale
-    I18n.locale = self.locale_param || self.header_locale || I18n.default_locale
+    I18n.locale = locale_param || header_locale || I18n.default_locale
   end
 
   def set_locale_param
-    self.default_url_options.merge!(locale: self.locale_param)
+    default_url_options.merge!(locale: locale_param)
   end
-
 end
