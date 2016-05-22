@@ -34,7 +34,6 @@ source 'https://rubygems.org' do
   gem 'sass-rails', '~> 4.0.0'
 
   gem 'jquery-rails'
-  gem 'turbolinks'
   gem 'bootstrap-sass', '~> 3.1.0'
 
   # Server
