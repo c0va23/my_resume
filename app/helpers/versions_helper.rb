@@ -2,8 +2,10 @@ module VersionsHelper
   WIDTH = HEIGH = 100.0
   RADIUS_X = WIDTH / 2
   RADIUS_Y = HEIGH / 2
+  RADIUS_COORDS = [RADIUS_X, RADIUS_Y].freeze
   CENTER_X = RADIUS_X
   CENTER_Y = RADIUS_Y
+  CENTER_COORDS = RADIUS_COORDS
   DEG_IN_PI = 180
   ROUND_COOR = 2
 
@@ -32,7 +34,8 @@ module VersionsHelper
     DEG_IN_PI**-1 * Math::PI * deg
   end
 
-  def coors(angel_rad)
+  def coords(angel_deg)
+    angel_rad = deg_to_rad(angel_deg)
     [
       coor_x(angel_rad),
       coor_y(angel_rad)
@@ -47,16 +50,20 @@ module VersionsHelper
     (CENTER_Y + Math.sin(angel_rad) * RADIUS_Y).round(ROUND_COOR)
   end
 
-  def move_to(x, y)
+  def move_to(coords)
+    x, y = coords
     "M #{x} #{y}"
   end
 
-  def line_to(x, y)
+  def line_to(coords)
+    x, y = coords
     "L #{x} #{y}"
   end
 
-  def arc_to(radius_x, radius_y, angel, large_arc, sweep_arc, x, y)
-    "A #{radius_x} #{radius_y} #{angel} #{large_arc},#{sweep_arc} #{x} #{y}"
+  def arc_to(radius_coords, angel, large_arc, sweep_arc, end_coords)
+    radius_x, radius_y = radius_coords
+    end_x, end_y = end_coords
+    "A #{radius_x} #{radius_y} #{angel} #{large_arc},#{sweep_arc} #{end_x} #{end_y}"
   end
 
   def close_path
@@ -67,20 +74,22 @@ module VersionsHelper
     concat tag :ellipse, options.merge(cx: CENTER_X, cy: CENTER_Y, rx: RADIUS_X, ry: RADIUS_Y)
   end
 
-  def render_sector(start_angel_deg, end_angel_deg, options)
-    start_angel_rad = deg_to_rad(start_angel_deg)
-    start_x, start_y = coors(start_angel_rad)
-
-    end_angel_rad = deg_to_rad(end_angel_deg)
-    end_x, end_y = coors(end_angel_rad)
-
+  def large_and_sweep_arc(start_angel_deg, end_angel_deg)
     large_arc = (end_angel_deg - start_angel_deg) > DEG_IN_PI ? 1 : 0
     sweep_arc = start_angel_deg > end_angel_deg ? 0 : 1
+    [large_arc, sweep_arc]
+  end
+
+  def render_sector(start_angel_deg, end_angel_deg, options)
+    start_coords = coords(start_angel_deg)
+    end_coords = coords(end_angel_deg)
+
+    large_arc, sweep_arc = large_and_sweep_arc(start_angel_deg, end_angel_deg)
 
     points = [
-      move_to(CENTER_X, CENTER_Y),
-      line_to(start_x, start_y),
-      arc_to(RADIUS_X, RADIUS_Y, 0, large_arc, sweep_arc, end_x, end_y),
+      move_to(CENTER_COORDS),
+      line_to(start_coords),
+      arc_to(RADIUS_COORDS, 0, large_arc, sweep_arc, end_coords),
       close_path,
     ].join(' ')
 
