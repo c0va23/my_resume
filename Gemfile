@@ -57,8 +57,11 @@ source 'https://rubygems.org' do
   group :development do
     gem 'quiet_assets'
     gem 'i18n-tasks'
-    gem 'pry-rails'
-    gem 'rubocop'
+
+    gem 'pry-rails', require: false
+    gem 'rubocop', require: false
+    gem 'flog', require: false
+    gem 'brakeman', require: false
   end
 
   group :production do
