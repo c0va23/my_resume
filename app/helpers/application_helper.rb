@@ -1,6 +1,11 @@
 module ApplicationHelper
+  DEFAULT_SITE_NAME = 'MyResume'.freeze
 
-  DEFAULT_SITE_NAME = "MyResume"
+  PERIODS = {
+    years: 365.days,
+    months: 30.days,
+    weeks: 7.days
+  }.freeze
 
   def site_name
     ENV['SITE_NAME'] || DEFAULT_SITE_NAME
@@ -10,19 +15,17 @@ module ApplicationHelper
     # i18n-tasks-use t('application_helper.years')
     # i18n-tasks-use t('application_helper.months')
     # i18n-tasks-use t('application_helper.weeks')
-    formated_period = { years: 365.days, months: 30.days, weeks: 7.days }
-      .each_with_object([]) do |(key, multiplier), list|
-        if (count = (period / multiplier).floor) > 0
-          period = period - count * multiplier
-          list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
-        end
-      end.join(' ')
-    formated_period.present? ? formated_period : '&nbsp;'.html_safe
+    PERIODS.each_with_object([]) do |(key, multiplier), list|
+      count = (period / multiplier).floor
+      next if count.zero?
+      period -= count * multiplier
+      list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
+    end.join(' ').presence || '&nbsp;'.html_safe
   end
 
   def format_period_proportion(period, total_period)
     proportion = period / total_period * 100
-    '%.2f %' % proportion
+    format '%.2f %', proportion
   end
 
   def yandex_metrika_counter_id
@@ -40,5 +43,4 @@ module ApplicationHelper
   def yandex_verification_code?
     yandex_verification_code.present?
   end
-
 end

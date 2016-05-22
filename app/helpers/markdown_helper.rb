@@ -1,12 +1,11 @@
 module MarkdownHelper
-
-  MARKDOWN_OPTIONS = { autolink: true }
+  MARKDOWN_OPTIONS = { autolink: true }.freeze
 
   def markdown(content)
     redcarpet_renderer.render(content).html_safe
   end
 
-protected
+  protected
 
   def redcarpet_renderer
     Thread.current[:redcarpet_renderer] ||= begin
