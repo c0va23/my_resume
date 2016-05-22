@@ -9,6 +9,5 @@ class ToolProject < ActiveRecord::Base
   delegate :name, to: :tool, prefix: true
   delegate :total_period, to: :project, prefix: true
 
-  scope :with_tools, -> { self.preload(:tool) }
-
+  scope :with_tools, -> { preload(:tool) }
 end
