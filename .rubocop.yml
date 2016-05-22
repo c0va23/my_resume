@@ -10,3 +10,6 @@ AllCops:
 
 Style/CaseEquality:
   Enabled: false
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
