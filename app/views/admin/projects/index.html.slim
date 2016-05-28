@@ -10,6 +10,6 @@ table.table
     - @projects.each do |project|
       tr
         td= link_to project.name, [ :admin, project ]
-        td= link_to project.url if project.url?
+        td= link_to project.url, project.url if project.url?
         td= truncate project.description
         td= truncate project.role
