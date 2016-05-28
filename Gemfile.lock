@@ -82,6 +82,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    ffaker (2.2.0)
     ffi (1.9.8)
     ffi2-generators (0.1.1)
     flog (4.4.0)
@@ -516,6 +517,7 @@ DEPENDENCIES
   date_validator!
   dotenv-rails!
   factory_girl_rails!
+  ffaker!
   flog!
   guard-rspec!
   i18n-tasks!

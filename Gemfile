@@ -51,6 +51,7 @@ source 'https://rubygems.org' do
     gem 'shoulda-matchers', '~> 2.8.0', require: false
     gem 'guard-rspec'
     gem 'timecop'
+    gem 'ffaker'
   end
 
   group :development do
