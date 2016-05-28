@@ -2,9 +2,6 @@ module Admin
   module Authentication
     extend ActiveSupport::Concern
 
-    USERNAME = ENV['ADMIN_USERNAME'] || 'admin'
-    PASSWORD = ENV['ADMIN_PASSWORD']
-
     included do
       before_action :authenticate
     end
@@ -12,8 +9,9 @@ module Admin
     protected
 
     def authenticate
+      admin_credentials = Rails.configuration.x.admin_credentials
       authenticate_or_request_with_http_basic 'MyResume' do |username, password|
-        USERNAME == username && PASSWORD == password
+        admin_credentials[:username] == username && admin_credentials[:password] == password
       end
     end
   end

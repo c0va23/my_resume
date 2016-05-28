@@ -28,5 +28,10 @@ module MyResume
       g.test_framework :rspec
       g.template_engine :slim
     end
+
+    config.x.admin_credentials = {
+      username: ENV['ADMIN_USERNAME'] || 'admin',
+      password: ENV['ADMIN_PASSWORD']
+    }
   end
 end
