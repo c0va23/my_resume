@@ -18,4 +18,9 @@ FactoryGirl.define do
     ended_at { 1.month.ago }
     project
   end
+
+  factory :company do
+    sequence(:name) { |n| "Company №#{n}" }
+    sequence(:started_at) { rand(1..12).months.ago }
+  end
 end

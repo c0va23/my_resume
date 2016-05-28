@@ -12,4 +12,15 @@ describe Company do
   describe 'indexes' do
     it { should have_db_index(:name).unique(true) }
   end
+
+  describe 'validations' do
+    subject { build :company }
+
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
+
+    it { should validate_presence_of(:started_at) }
+
+    it 'shoulda validate site_url'
+  end
 end
