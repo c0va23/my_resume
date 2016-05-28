@@ -45,6 +45,8 @@ RSpec.configure do |config|
 
   config.include CarrierWave::Test::Matchers, example_group: { file_path: config.escaped_path(%w( uploaders )) }
 
+  config.include AdminControllerAuthHelper, type: :controller
+
   config.before :suite do
     Timecop.travel Time.new(2014, 6, 1).in_time_zone
   end
