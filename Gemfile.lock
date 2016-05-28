@@ -540,7 +540,7 @@ DEPENDENCIES
   rubysl!
   rubysl-test-unit!
   sass-rails (~> 4.0.0)!
-  shoulda-matchers!
+  shoulda-matchers (~> 2.8.0)!
   simple-navigation!
   slim (~> 3.0.3)!
   timecop!
