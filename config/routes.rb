@@ -27,5 +27,6 @@ MyResume::Application.routes.draw do
     resources :pages, concerns: %i( deletable )
     resources :tool_types, concerns: %i( deletable )
     resources :contacts, concerns: %i( deletable )
+    resources :companies, concerns: %i( deletable )
   end
 end
