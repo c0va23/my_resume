@@ -24,6 +24,7 @@ describe Company do
       should_not allow_value(1.day.since).for(:started_at)
     end
 
+    it { should allow_value(nil).for(:ended_at) }
     it 'ended_at should be great than ended_at' do
       should_not allow_value(subject.started_at - 1.day).for(:ended_at)
     end
