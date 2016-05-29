@@ -13,3 +13,10 @@ en:
         tool_type_id: Tool type
       tool_type:
         name: Name
+
+      company:
+        name: Name
+        description: Description
+        site_url: Site url
+        started_at: Started at
+        ended_at: Ended at

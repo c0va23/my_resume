@@ -112,3 +112,20 @@ ru:
         new_tool: "Новый инструмент"
       show:
         show_tool: "Показать инструмент"
+
+    companies:
+      index:
+        companies: Компании
+        present_time: Текущее время
+      show:
+        show_company: Компания
+        present_time: Текущее время
+      new:
+        new_company: Новая компания
+      edit:
+        edit_company: Редактировать компанию
+      form:
+        save_company: Сохранить компанию
+      delete:
+        delete_company: Удалить компанию
+        destroy_company: Уничтожить компанию

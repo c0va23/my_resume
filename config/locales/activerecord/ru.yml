@@ -13,3 +13,10 @@ ru:
         tool_type_id: "Тип инструмента"
       tool_type:
         name: "Название"
+
+      company:
+        name: Название
+        description: Описание
+        site_url: Адрес сайта
+        started_at: Дата начала
+        ended_at: Дата окончания

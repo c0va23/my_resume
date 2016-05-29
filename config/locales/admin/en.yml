@@ -112,3 +112,20 @@ en:
         new_tool: New tool
       show:
         show_tool: Show tool
+
+    companies:
+      index:
+        companies: Companies
+        present_time: Present time
+      show:
+        show_company: Company
+        present_time: Present time
+      new:
+        new_company: New company
+      edit:
+        edit_company: Edit company
+      form:
+        save_company: Save company
+      delete:
+        delete_company: Delete company
+        destroy_company: Destroy company
