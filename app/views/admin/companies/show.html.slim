@@ -1,0 +1,30 @@
+h1 = t '.show_company'
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.company.name')
+  dt = Company.human_attribute_name(:name)
+  dl = @company.name
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.company.description')
+  dt = Company.human_attribute_name(:description)
+  dd = @company.description
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.company.site_url')
+  dt = Company.human_attribute_name(:site_url)
+  dd = @company.site_url
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.company.started_at')
+  dt = Company.human_attribute_name(:started_at)
+  dd = l @company.started_at
+
+dl
+  / i18n-tasks-use t('activerecord.attributes.company.ended_at')
+  dt = Company.human_attribute_name(:ended_at)
+  dd
+    - if @company.ended_at?
+      = l @company.ended_at
+    - else
+      = t '.present_time'

@@ -1,0 +1,25 @@
+h1 = t '.companies'
+
+table.table
+  thead
+    tr
+      / i18n-tasks-use t('activerecord.attributes.company.name')
+      th = Company.human_attribute_name(:name)
+      / i18n-tasks-use t('activerecord.attributes.company.site_url')
+      th = Company.human_attribute_name(:site_url)
+      / i18n-tasks-use t('activerecord.attributes.company.started_at')
+      th = Company.human_attribute_name(:started_at)
+      / i18n-tasks-use t('activerecord.attributes.company.ended_at')
+      th = Company.human_attribute_name(:ended_at)
+
+  tbody
+    - @companies.each do |company|
+      tr
+        td = link_to company.name, [:admin, company]
+        td = link_to company.site_url, company.site_url
+        td = l company.started_at
+        td
+          - if company.ended_at?
+            = l company.ended_at
+          - else
+            = t '.present_time'

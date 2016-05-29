@@ -112,6 +112,22 @@ SimpleNavigation::Configuration.run do |navigation|
       end
     end
 
+    primary.item :companies,
+                 t('admin.companies.index.companies'),
+                 admin_companies_path,
+                 highlights_on: :subpath do |companies_navigation|
+      companies_navigation.dom_class = 'nav nav-pills'
+      companies_navigation.selected_class = 'active'
+
+      if @company.try(:persisted?)
+        companies_navigation.item :show_company, t('admin.companies.show.show_company'), [:admin, @company]
+        companies_navigation.item :edit_company, t('admin.companies.edit.edit_company'), [:edit_admin, @company]
+        companies_navigation.item :delete_company, t('admin.companies.delete.delete_company'), [:delete_admin, @company]
+      else
+        companies_navigation.item :new_company, t('admin.companies.new.new_company'), new_admin_company_path
+      end
+    end # contacts
+
     primary.item :pages, t('admin.pages.index.pages'), admin_pages_path, highlights_on: :subpath do |pages_navigation|
       pages_navigation.dom_class = 'nav nav-pills'
       pages_navigation.selected_class = 'active'

@@ -1,0 +1,30 @@
+= form_for [ :admin, @company ], class: 'form' do |form|
+  = render 'admin/shared/errors', object: @company
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.company.name')
+    = form.label :name
+    = form.text_field :name, class: 'form-control', required: true
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.company.description')
+    = form.label :description
+    = form.text_area :description, class: 'form-control'
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.company.site_url')
+    = form.label :site_url
+    = form.url_field :site_url, class: 'form-control'
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.company.started_at')
+    = form.label :started_at
+    = form.date_field :started_at, class: 'form-control', required: true
+
+  .form-group
+    / i18n-tasks-use t('activerecord.attributes.company.ended_at')
+    = form.label :ended_at
+    = form.date_field :ended_at, class: 'form-control'
+
+
+  = form.button t('.save_company'), class: 'btn btn-primary'
