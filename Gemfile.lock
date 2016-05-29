@@ -104,6 +104,9 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    guard-rubocop (1.2.0)
+      guard (~> 2.0)
+      rubocop (~> 0.20)
     highline (1.7.2)
     hike (1.2.3)
     hitimes (1.2.2)
@@ -520,6 +523,7 @@ DEPENDENCIES
   ffaker!
   flog!
   guard-rspec!
+  guard-rubocop!
   i18n-tasks!
   jquery-rails!
   pg!

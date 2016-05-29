@@ -52,6 +52,7 @@ source 'https://rubygems.org' do
     gem 'guard-rspec'
     gem 'timecop'
     gem 'ffaker'
+    gem 'guard-rubocop'
   end
 
   group :development do

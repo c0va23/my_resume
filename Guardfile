@@ -28,3 +28,12 @@ guard :rspec, cmd: './bin/rspec' do
   #   Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance'
   # end
 end
+
+guard :rubocop, cli: '--rails' do
+  watch(%r{^spec/.+\.rb$})
+  watch(%r{^app/.+\.rb$})
+  watch(%r{^config/.+\.rb$})
+  watch(%r{^db/.+\.rb$})
+  watch(%r{^lib/.+\.rb$})
+  watch(/^Gemfile$/)
+end
