@@ -11,11 +11,11 @@ class Timeline
     @filters = @root.find('.js-timeline-filter')
     @filters.on 'change', @updateFilter
 
-  onDataLoaded: (data) =>
-    @timeSlotDataSet = new vis.DataSet(data)
+  onDataLoaded: (timeSlotsData) =>
+    @timeSlotDataSet = new vis.DataSet @timeSlotsDataSet(timeSlotsData)
     @timeline = new vis.Timeline(@container, @timeSlots(), stack: false, selectable: false, zoomable: true)
 
-  timeSlots: => 
+  timeSlots: =>
     @timeSlotDataSet.get(filter: @timeSlotFilter(@selectedToolNames()))
 
   timeSlotFilter: (selectedToolNames) =>
@@ -33,6 +33,20 @@ class Timeline
     @timeline.setItems @timeSlots()
 
   timeZone: => - new Date().getTimezoneOffset() / 60
+
+  timeSlotContent: (timeSlot) =>
+    projectLink = "<a href='#{timeSlot.project_link}'>#{timeSlot.project_name}</a>"
+    return projectLink unless timeSlot.company_name?
+    "<b>#{timeSlot.company_name}</b><br/>#{projectLink}"
+
+  timeSlotsDataSet: (timeSlotsData) =>
+    $.map timeSlotsData, (timeSlot) =>
+      {
+        start: new Date(timeSlot.started_at)
+        end: new Date(timeSlot.ended_at)
+        content: @timeSlotContent(timeSlot)
+        title: timeSlot.project_name
+      }
 
 jQuery ($) ->
   $('.js-timeline').each -> new Timeline(@)

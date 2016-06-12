@@ -8,6 +8,7 @@ class TimeSlot < ActiveRecord::Base
   validate :validate_date_range
 
   delegate :name, to: :project, prefix: true
+  delegate :company_name, to: :project
 
   class << self
     def total_period
