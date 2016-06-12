@@ -29,7 +29,7 @@ guard :rspec, cmd: './bin/rspec' do
   # end
 end
 
-guard :rubocop, cli: '--rails' do
+guard :rubocop do
   watch(%r{^spec/.+\.rb$})
   watch(%r{^app/.+\.rb$})
   watch(%r{^config/.+\.rb$})

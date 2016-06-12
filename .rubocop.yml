@@ -7,6 +7,11 @@ Metrics/LineLength:
 AllCops:
   Exclude:
     - bin/*
+    - db/schema.rb
+  DisplayCopNames: true
+
+Rails:
+  Enabled: true
 
 Style/CaseEquality:
   Enabled: false
