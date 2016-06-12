@@ -19,6 +19,9 @@ describe TimeSlot do
     it { should_not allow_value(second_invalid_ended_at).for(:ended_at) }
   end
 
+  it { should delegate_method(:name).to(:project).with_prefix }
+  it { should delegate_method(:company_name).to(:project) }
+
   describe 'validate date range' do
     let!(:other_time_slot) { create(:time_slot, started_at: 2.weeks.ago, ended_at: 2.weeks.since) }
 

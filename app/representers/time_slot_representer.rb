@@ -2,15 +2,17 @@ module TimeSlotRepresenter
   include Roar::JSON
   include ActionView::Helpers::TagHelper
 
-  property :started_at_aligned, as: :start
-  property :ended_at_aligned, as: :end
-  property :content
+  property :project_name
+  property :project_link
+  property :company_name
+  property :started_at_aligned, as: :started_at
+  property :ended_at_aligned, as: :ended_at
   property :tool_names
 
   protected
 
-  def content
-    content_tag :a, project_name, href: project_path(project_id), title: project_name
+  def project_link
+    project_path(project_id)
   end
 
   def tool_names
