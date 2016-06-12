@@ -12,6 +12,10 @@ section
   = simple_format @project.role
 
 section
+  h2 = t('.company_name')
+  = @project.company_name
+
+section
   h2 = t('.screenshots')
   - if @project.screenshots.any?
     .row = render partial: 'projects/show/screenshot', collection: @project.screenshots

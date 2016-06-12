@@ -34,6 +34,7 @@ en:
       time_slots: Time slots
       tools: Tools
       total_period: Total period
+      company_name: Company name
   shared:
     timeline:
       filter: Filter

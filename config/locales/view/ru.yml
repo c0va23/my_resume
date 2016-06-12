@@ -37,6 +37,7 @@ ru:
       time_slots: "Временные слоты"
       tools: "Инструменты"
       total_period: "Общая продолжительность"
+      company_name: "Название компании"
   shared:
     timeline:
       filter: "Фильтр"
