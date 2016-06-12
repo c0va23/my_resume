@@ -14,6 +14,8 @@ describe Project do
   it { should have_many(:time_slots).dependent(:destroy) }
   it { should belong_to(:company) }
 
+  it { should delegate_method(:name).to(:company).with_prefix }
+
   describe '#total_period' do
     let(:project) { create(:project) }
     let!(:time_slot1) { create(:time_slot, project: project, started_at: 60.days.ago, ended_at: 30.days.ago) }

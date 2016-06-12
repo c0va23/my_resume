@@ -8,4 +8,6 @@ class Project < ActiveRecord::Base
   has_many :tools, through: :tool_projects
   has_many :time_slots, dependent: :destroy
   belongs_to :company
+
+  delegate :name, to: :company, prefix: true, allow_nil: true
 end

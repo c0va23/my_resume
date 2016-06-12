@@ -9,6 +9,10 @@ dl
   dd = simple_format @project.description
 
 dl
+  dt = Project.human_attribute_name(:company_name)
+  dd = @project.company_name
+
+dl
   dt = Project.human_attribute_name(:role)
   dd = simple_format @project.role
 

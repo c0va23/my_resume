@@ -14,6 +14,10 @@
     = f.text_area :description, class: 'form-control'
 
   .form-group
+    = f.label :company
+    = f.collection_select :company_id, Company.all, :id, :name, {prompt: true}, class: 'form-control'
+
+  .form-group
     = f.label :role
     = f.text_area :role, class: 'form-control'
 
