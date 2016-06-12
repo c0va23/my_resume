@@ -11,9 +11,10 @@ section
   h2 = t('.role')
   = simple_format @project.role
 
-section
-  h2 = t('.company_name')
-  = @project.company_name
+- if @project.company_name
+  section
+    h2 = t('.company_name')
+    = @project.company_name
 
 section
   h2 = t('.screenshots')
