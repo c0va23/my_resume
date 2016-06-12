@@ -4,7 +4,7 @@ class TimeSlotsController < ApplicationController
   represents :json, collection: TimeSlotCollectionRepresenter
 
   def index
-    @time_slots = base_scope.order(:started_at).includes(:project, :tools)
+    @time_slots = base_scope.order(:started_at).includes(:tools, project: [:company])
     respond_with @time_slots
   end
 
