@@ -52,6 +52,9 @@ en:
       period: Period
       proportion: Proportion
       version: Version
+  errors:
+    not_found:
+      page_not_found: Page not found
   user_navigation:
     main_page: Main page
     pages: Pages

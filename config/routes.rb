@@ -30,4 +30,6 @@ MyResume::Application.routes.draw do
     resources :contacts, concerns: %i( deletable )
     resources :companies, concerns: %i( deletable )
   end
+
+  get '/*path' => 'application#not_found'
 end

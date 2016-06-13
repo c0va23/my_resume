@@ -55,6 +55,9 @@ ru:
       period: "Продолжительность"
       proportion: "Доля"
       version: "Версия"
+  errors:
+    not_found:
+      page_not_found: Страница не найдена
   user_navigation:
     main_page: "Главная страница"
     pages: "Страницы"
