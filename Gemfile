@@ -13,12 +13,12 @@ source 'https://rubygems.org' do
   gem 'rails-i18n'
 
   # DB
-  gem 'pg'
+  gem 'pg', '~> 0.18.1'
 
   # View
   gem 'redcarpet', '~> 3.3.0'
   gem 'slim', '~> 3.0.3'
-  gem 'simple-navigation'
+  gem 'simple-navigation', '~> 4.0'
   gem 'roar-rails', '~> 1.0.1'
 
   # Image
