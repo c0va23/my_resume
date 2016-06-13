@@ -22,8 +22,8 @@ source 'https://rubygems.org' do
   gem 'roar-rails', '~> 1.0.1'
 
   # Image
-  gem 'carrierwave'
-  gem 'cloudinary'
+  gem 'carrierwave', '~> 0.11.2'
+  gem 'cloudinary', '~> 1.1.7'
 
   # Validation
   gem 'date_validator', '~> 0.9'
