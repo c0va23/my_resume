@@ -229,7 +229,7 @@ GEM
       roar (>= 1.0.0, <= 1.1.0)
       test_xml (>= 0.1.6)
       uber (>= 0.0.5)
-    rollbar (2.11.3)
+    rollbar (2.11.5)
       multi_json
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
