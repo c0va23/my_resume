@@ -16,7 +16,7 @@ source 'https://rubygems.org' do
   gem 'pg'
 
   # View
-  gem 'redcarpet'
+  gem 'redcarpet', '~> 3.3.0'
   gem 'slim', '~> 3.0.3'
   gem 'simple-navigation'
   gem 'roar-rails', '~> 1.0.1'
@@ -26,7 +26,7 @@ source 'https://rubygems.org' do
   gem 'cloudinary'
 
   # Validation
-  gem 'date_validator'
+  gem 'date_validator', '~> 0.9'
 
   # Assets
   gem 'uglifier', '>= 1.3.0'
