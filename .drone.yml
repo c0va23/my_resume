@@ -1,0 +1,15 @@
+build:
+  image: ruby:2.3-onbuild
+  commands:
+    - rake db:setup
+    - rspec
+  environment:
+    - DATABASE_URL=postgres://postgres:mysecretpassword@postgres/my_resume_test
+
+compose:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+
