@@ -60,7 +60,7 @@ source 'https://rubygems.org' do
     gem 'i18n-tasks'
 
     gem 'pry-rails', require: false
-    gem 'rubocop', require: false
+    gem 'rubocop', '~> 0.40.0', require: false
     gem 'flog', require: false
     gem 'brakeman', require: false
   end
