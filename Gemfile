@@ -46,7 +46,8 @@ source 'https://rubygems.org' do
   gem 'rollbar', '~> 2.11.3'
 
   group :test do
-    gem 'rspec-rails', '~> 2.14.0'
+    gem 'rspec-rails', '~> 2.99.0'
+    gem 'rspec-its'
     gem 'factory_girl_rails'
     gem 'shoulda-matchers', '~> 2.8.0', require: false
     gem 'guard-rspec'
