@@ -3,6 +3,11 @@ language: ruby
 services:
 - postgresql
 
-before_install:
+before_script:
 - psql -c 'create database my_resume_test;' -U postgres
 - cp config/database.yml.example config/database.yml
+- bin/rake db:migrate RAILS_ENV=test
+
+script:
+- bin/rubocop
+- bin/rspec
