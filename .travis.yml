@@ -1,1 +1,8 @@
 language: ruby
+
+services:
+- postgresql
+
+before_install:
+- psql -c 'create database my_resume_test;' -U postgres
+- cp config/database.yml.example config/database.yml
