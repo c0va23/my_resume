@@ -4,3 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 MyResume::Application.load_tasks
+
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new(:rubocop)
+
+task default: %i(rubocop spec)

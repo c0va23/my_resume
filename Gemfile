@@ -46,9 +46,10 @@ source 'https://rubygems.org' do
   gem 'rollbar', '~> 2.11.3'
 
   group :test do
-    gem 'rspec-rails', '~> 2.14.0'
+    gem 'rspec-rails', '~> 3.7.2'
+    gem 'rspec-its'
     gem 'factory_girl_rails'
-    gem 'shoulda-matchers', '~> 2.8.0', require: false
+    gem 'shoulda-matchers', '~> 3.1.1', require: false
     gem 'guard-rspec'
     gem 'timecop'
     gem 'ffaker'
@@ -60,7 +61,7 @@ source 'https://rubygems.org' do
     gem 'i18n-tasks'
 
     gem 'pry-rails', require: false
-    gem 'rubocop', require: false
+    gem 'rubocop', '~> 0.40.0', require: false
     gem 'flog', require: false
     gem 'brakeman', require: false
   end
