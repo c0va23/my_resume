@@ -49,7 +49,7 @@ source 'https://rubygems.org' do
     gem 'rspec-rails', '~> 3.7.2'
     gem 'rspec-its'
     gem 'factory_girl_rails'
-    gem 'shoulda-matchers', '~> 2.8.0', require: false
+    gem 'shoulda-matchers', '~> 3.1.1', require: false
     gem 'guard-rspec'
     gem 'timecop'
     gem 'ffaker'
