@@ -5,7 +5,11 @@ require File.expand_path('../config/application', __FILE__)
 
 MyResume::Application.load_tasks
 
-require 'rubocop/rake_task'
-RuboCop::RakeTask.new(:rubocop)
+begin
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new(:rubocop)
 
-task default: %i(rubocop spec)
+  task default: %i(rubocop spec)
+# Skip develpment dependencies
+rescue LoadError => e
+end
