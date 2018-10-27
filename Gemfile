@@ -12,6 +12,8 @@ source 'https://rubygems.org' do
 
   gem 'rails-i18n'
 
+  gem 'tzinfo-data'
+
   # DB
   gem 'pg', '~> 0.18.1'
 
