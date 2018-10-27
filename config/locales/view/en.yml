@@ -23,7 +23,7 @@ en:
       pages: Pages
   projects:
     index:
-      projects: Projects
+      projects: Pojects
     show:
       description: Description
       no_screenshots: No screenshots
