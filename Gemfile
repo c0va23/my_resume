@@ -56,6 +56,7 @@ source 'https://rubygems.org' do
     gem 'timecop'
     gem 'ffaker'
     gem 'guard-rubocop'
+    gem 'sqlite3'
   end
 
   group :development do

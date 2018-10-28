@@ -4,12 +4,12 @@ default: &default
   adapter: postgresql
 
 development:
-  <<: *default
-  database: my_resume_development
+  adapter: sqlite3
+  database: db/my_resume_development.sqlite3
 
 test:
-  <<: *default
-  database: my_resume_test
+  adapter: sqlite3
+  database: db/my_resume_test.sqlite3
 
 # production:
 #   <<: *default
