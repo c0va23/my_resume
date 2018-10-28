@@ -8,7 +8,7 @@ source 'https://rubygems.org' do
     gem 'psych'
   end
 
-  gem 'rails', '~> 4.2.0'
+  gem 'rails', '~> 5.0.7'
 
   gem 'rails-i18n'
 
@@ -21,10 +21,10 @@ source 'https://rubygems.org' do
   gem 'redcarpet', '~> 3.3.0'
   gem 'slim', '~> 3.0.3'
   gem 'simple-navigation', '~> 4.0'
-  gem 'roar-rails', '~> 1.0.1'
+  gem 'roar-rails', '~> 1.1.0'
 
   # Image
-  gem 'carrierwave', '~> 0.11.2'
+  gem 'carrierwave', '~> 1.2.2'
   gem 'cloudinary', '~> 1.1.7'
 
   # Validation
@@ -32,8 +32,8 @@ source 'https://rubygems.org' do
 
   # Assets
   gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.1.0'
-  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.2.0'
+  gem 'sass-rails', '~> 5.0.0'
 
   gem 'jquery-rails'
   gem 'bootstrap-sass', '~> 3.1.0'
@@ -48,10 +48,10 @@ source 'https://rubygems.org' do
   gem 'rollbar', '~> 2.11.3'
 
   group :test do
-    gem 'rspec-rails', '~> 3.7.2'
+    gem 'rspec-rails', '~> 3.8.1'
     gem 'rspec-its'
     gem 'factory_girl_rails'
-    gem 'shoulda-matchers', '~> 3.1.1', require: false
+    gem 'shoulda-matchers', '~> 3.1.2', require: false
     gem 'guard-rspec'
     gem 'timecop'
     gem 'ffaker'
@@ -59,7 +59,6 @@ source 'https://rubygems.org' do
   end
 
   group :development do
-    gem 'quiet_assets'
     gem 'i18n-tasks'
 
     gem 'pry-rails', require: false
