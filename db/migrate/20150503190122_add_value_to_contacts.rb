@@ -1,4 +1,4 @@
-class AddValueToContacts < ActiveRecord::Migration
+class AddValueToContacts < ActiveRecord::Migration[4.2]
   def change
     add_column :contacts, :value, :string
   end

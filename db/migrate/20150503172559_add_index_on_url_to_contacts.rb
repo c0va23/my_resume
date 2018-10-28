@@ -1,4 +1,4 @@
-class AddIndexOnUrlToContacts < ActiveRecord::Migration
+class AddIndexOnUrlToContacts < ActiveRecord::Migration[4.2]
   def change
     add_index :contacts, :url, unique: true
   end
