@@ -5,6 +5,8 @@ PUMA_WORKERS = Integer(ENV['PUMA_WORKERS'] || 1)
 threads PUMA_THREADS_MIN, PUMA_THREADS_MAX
 workers PUMA_WORKERS if PUMA_WORKERS > 1
 
+environment ENV.fetch("RAILS_ENV") { "development" }
+
 preload_app!
 
 on_worker_boot do
