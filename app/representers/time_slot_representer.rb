@@ -1,6 +1,6 @@
 module TimeSlotRepresenter
   include Roar::JSON
-  include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::UrlHelper
 
   property :project_name
   property :project_link
