@@ -42,7 +42,7 @@ en:
       new:
         new_project: New project
       show:
-        show_project: Show roject
+        show_project: Show project
     screenshots:
       delete:
         delete_screenshot: Delete screenshot
