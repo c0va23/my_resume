@@ -50,7 +50,7 @@ source 'https://rubygems.org' do
   group :test do
     gem 'rspec-rails', '~> 3.8.1'
     gem 'rspec-its'
-    gem 'factory_girl_rails'
+    gem 'factory_bot_rails'
     gem 'shoulda-matchers', '~> 3.1.2', require: false
     gem 'guard-rspec'
     gem 'timecop'
