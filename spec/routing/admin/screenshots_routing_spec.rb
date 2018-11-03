@@ -2,30 +2,30 @@ require 'spec_helper'
 
 describe Admin::ScreenshotsController do
   describe 'routes' do
-    it { get('/admin/projects/1/screenshots').should route_to('admin/screenshots#index', project_id: '1') }
-    it { get('/admin/projects/1/screenshots/new').should route_to('admin/screenshots#new', project_id: '1') }
-    it { post('/admin/projects/1/screenshots').should route_to('admin/screenshots#create', project_id: '1') }
+    it { expect(get('/admin/projects/1/screenshots')).to route_to('admin/screenshots#index', project_id: '1') }
+    it { expect(get('/admin/projects/1/screenshots/new')).to route_to('admin/screenshots#new', project_id: '1') }
+    it { expect(post('/admin/projects/1/screenshots')).to route_to('admin/screenshots#create', project_id: '1') }
 
     specify do
-      get('/admin/projects/1/screenshots/2').should route_to('admin/screenshots#show', project_id: '1', id: '2')
+      expect(get('/admin/projects/1/screenshots/2')).to route_to('admin/screenshots#show', project_id: '1', id: '2')
     end
 
     specify do
-      get('/admin/projects/1/screenshots/2/edit').should route_to('admin/screenshots#edit', project_id: '1', id: '2')
+      expect(get('/admin/projects/1/screenshots/2/edit')).to route_to('admin/screenshots#edit', project_id: '1', id: '2')
     end
 
     specify do
-      patch('/admin/projects/1/screenshots/2').should route_to('admin/screenshots#update', project_id: '1', id: '2')
+      expect(patch('/admin/projects/1/screenshots/2')).to route_to('admin/screenshots#update', project_id: '1', id: '2')
     end
 
     specify do
-      get('/admin/projects/1/screenshots/2/delete').should route_to 'admin/screenshots#delete',
+      expect(get('/admin/projects/1/screenshots/2/delete')).to route_to 'admin/screenshots#delete',
                                                                     project_id: '1',
                                                                     id: '2'
     end
 
     specify do
-      delete('/admin/projects/1/screenshots/2').should route_to('admin/screenshots#destroy', project_id: '1', id: '2')
+      expect(delete('/admin/projects/1/screenshots/2')).to route_to('admin/screenshots#destroy', project_id: '1', id: '2')
     end
   end
 end

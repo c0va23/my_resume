@@ -1,20 +1,20 @@
 require 'spec_helper'
 
 describe Project do
-  it { should have_db_column(:name).of_type(:string).with_options(null: false) }
-  it { should have_db_column(:description).of_type(:text) }
-  it { should have_db_column(:url).of_type(:string) }
-  it { should have_db_column(:role).of_type(:text) }
+  it { is_expected.to have_db_column(:name).of_type(:string).with_options(null: false) }
+  it { is_expected.to have_db_column(:description).of_type(:text) }
+  it { is_expected.to have_db_column(:url).of_type(:string) }
+  it { is_expected.to have_db_column(:role).of_type(:text) }
 
-  it { should validate_presence_of(:name) }
+  it { is_expected.to validate_presence_of(:name) }
 
-  it { should have_many(:screenshots).dependent(:destroy) }
-  it { should have_many(:tool_projects).dependent(:destroy) }
-  it { should have_many(:tools).through(:tool_projects) }
-  it { should have_many(:time_slots).dependent(:destroy) }
-  it { should belong_to(:company) }
+  it { is_expected.to have_many(:screenshots).dependent(:destroy) }
+  it { is_expected.to have_many(:tool_projects).dependent(:destroy) }
+  it { is_expected.to have_many(:tools).through(:tool_projects) }
+  it { is_expected.to have_many(:time_slots).dependent(:destroy) }
+  it { is_expected.to belong_to(:company) }
 
-  it { should delegate_method(:name).to(:company).with_prefix }
+  it { is_expected.to delegate_method(:name).to(:company).with_prefix }
 
   describe '#total_period' do
     let(:project) { create(:project) }
@@ -23,6 +23,6 @@ describe Project do
 
     subject { project.total_period }
 
-    it { should == 30.days + 1.week }
+    it { is_expected.to eq 30.days + 1.week }
   end
 end
