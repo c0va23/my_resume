@@ -5,14 +5,17 @@ ru:
       few: "%{count} месяцев"
       many: "%{count} месяцев"
       one: "%{count} месяц"
+      other: "%{count} месяцев"
     weeks:
       few: "%{count} недели"
       many: "%{count} недель"
       one: "%{count} неделя"
+      other: "%{count} недель"
     years:
       few: "%{count} года"
       many: "%{count} лет"
       one: "%{count} год"
+      other: "%{count} лет"
   layouts:
     admin:
       home: "Дом"
