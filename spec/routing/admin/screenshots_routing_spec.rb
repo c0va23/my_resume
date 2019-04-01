@@ -11,7 +11,10 @@ describe Admin::ScreenshotsController do
     end
 
     specify do
-      expect(get('/admin/projects/1/screenshots/2/edit')).to route_to('admin/screenshots#edit', project_id: '1', id: '2')
+      expect(get('/admin/projects/1/screenshots/2/edit')).to route_to(
+        'admin/screenshots#edit',
+        project_id: '1', id: '2',
+      )
     end
 
     specify do
@@ -19,13 +22,19 @@ describe Admin::ScreenshotsController do
     end
 
     specify do
-      expect(get('/admin/projects/1/screenshots/2/delete')).to route_to 'admin/screenshots#delete',
-                                                                    project_id: '1',
-                                                                    id: '2'
+      expect(get('/admin/projects/1/screenshots/2/delete')).to route_to(
+        'admin/screenshots#delete',
+        project_id: '1',
+        id: '2',
+      )
     end
 
     specify do
-      expect(delete('/admin/projects/1/screenshots/2')).to route_to('admin/screenshots#destroy', project_id: '1', id: '2')
+      expect(delete('/admin/projects/1/screenshots/2')).to route_to(
+        'admin/screenshots#destroy',
+        project_id: '1',
+        id: '2',
+      )
     end
   end
 end

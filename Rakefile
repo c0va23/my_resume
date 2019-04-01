@@ -7,9 +7,12 @@ MyResume::Application.load_tasks
 
 begin
   require 'rubocop/rake_task'
-  RuboCop::RakeTask.new(:rubocop)
+  RuboCop::RakeTask.new(:rubocop) do |t|
+    t.options = ['--config', '.rubocop.yml']
+  end
 
   task default: %i(rubocop spec)
 # Skip develpment dependencies
 rescue LoadError => e
+  puts e
 end
