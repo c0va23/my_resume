@@ -2,25 +2,25 @@ require 'spec_helper'
 
 describe Screenshot do
   describe 'columns' do
-    it { should have_db_column(:name).of_type(:string) }
-    it { should have_db_column(:description).of_type(:text) }
-    it { should have_db_column(:image).of_type(:string) }
-    it { should have_db_column(:project_id).of_type(:integer) }
+    it { is_expected.to have_db_column(:name).of_type(:string) }
+    it { is_expected.to have_db_column(:description).of_type(:text) }
+    it { is_expected.to have_db_column(:image).of_type(:string) }
+    it { is_expected.to have_db_column(:project_id).of_type(:integer) }
   end
 
   describe 'validation' do
-    it { should validate_length_of(:name).is_at_most(100) }
-    it { should validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_most(100) }
+    it { is_expected.to validate_presence_of(:name) }
 
-    it { should validate_length_of(:description).is_at_most(1000) }
-    it { should validate_presence_of(:image) }
+    it { is_expected.to validate_length_of(:description).is_at_most(1000) }
+    it { is_expected.to validate_presence_of(:image) }
   end
 
   describe 'image' do
-    its(:image) { should be_a(ScreenshotUploader) }
+    its(:image) { is_expected.to be_a(ScreenshotUploader) }
   end
 
   describe 'associations' do
-    it { should belong_to(:project) }
+    it { is_expected.to belong_to(:project) }
   end
 end

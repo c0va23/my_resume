@@ -1,6 +1,6 @@
 module TimeSlotRepresenter
   include Roar::JSON
-  include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::UrlHelper
 
   property :project_name
   property :project_link
@@ -8,8 +8,6 @@ module TimeSlotRepresenter
   property :started_at_aligned, as: :started_at
   property :ended_at_aligned, as: :ended_at
   property :tool_names
-
-  protected
 
   def project_link
     project_path(project_id)

@@ -25,7 +25,7 @@ module ApplicationHelper
 
   def format_period_proportion(period, total_period)
     proportion = period / total_period * 100
-    format '%.2f %', proportion
+    format '%.2f %%', proportion
   end
 
   def yandex_metrika_counter_id

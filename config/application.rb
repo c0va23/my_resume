@@ -1,6 +1,17 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require 'rails'
+
+%w(
+  active_record/railtie
+  action_controller/railtie
+  action_view/railtie
+  action_mailer/railtie
+  rails/test_unit/railtie
+  sprockets/railtie
+).each do |railtie|
+  require railtie
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,8 +32,6 @@ module MyResume
     config.i18n.available_locales = %i(ru en)
     config.i18n.default_locale = :ru
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
-
-    config.active_record.raise_in_transactional_callbacks = true
 
     config.generators do |g|
       g.test_framework :rspec

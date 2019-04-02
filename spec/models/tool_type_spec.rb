@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe ToolType do
-  it { should have_db_column(:name) }
-  it { should validate_presence_of(:name) }
-  it { should validate_uniqueness_of(:name) }
-  it { should have_many(:tools).dependent(:nullify) }
+  it { is_expected.to have_db_column(:name) }
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_uniqueness_of(:name) }
+  it { is_expected.to have_many(:tools).dependent(:nullify) }
 end

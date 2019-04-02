@@ -1,4 +1,4 @@
-class CreateToolProjects < ActiveRecord::Migration
+class CreateToolProjects < ActiveRecord::Migration[4.2]
   def change
     create_table :tool_projects do |t|
       t.references :project

@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe Tool do
-  it { should have_db_column(:name) }
-  it { should validate_presence_of(:name) }
-  it { should validate_uniqueness_of(:name) }
-  it { should have_many(:tool_projects).dependent(:destroy) }
-  it { should have_many(:projects).through(:tool_projects) }
-  it { should have_many(:time_slots).through(:projects) }
-  it { should belong_to(:tool_type) }
+  it { is_expected.to have_db_column(:name) }
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_uniqueness_of(:name) }
+  it { is_expected.to have_many(:tool_projects).dependent(:destroy) }
+  it { is_expected.to have_many(:projects).through(:tool_projects) }
+  it { is_expected.to have_many(:time_slots).through(:projects) }
+  it { is_expected.to belong_to(:tool_type) }
 
   describe 'scope :available_for' do
     let(:project) { create(:project) }
@@ -21,15 +21,15 @@ describe Tool do
     context 'new tool_project' do
       let(:tool_project) { build(:tool_project, project: project, tool: nil) }
 
-      it { should be_include(other_tool) }
-      it { should_not be_include(appended_tool) }
+      it { is_expected.to be_include(other_tool) }
+      it { is_expected.to_not be_include(appended_tool) }
     end
 
     context 'edit tool_project' do
       let(:tool_project) { create(:tool_project, project: project, tool: other_tool) }
 
-      it { should be_include(other_tool) }
-      it { should_not be_include(appended_tool) }
+      it { is_expected.to be_include(other_tool) }
+      it { is_expected.to_not be_include(appended_tool) }
     end
   end # scope :available_for
 
@@ -45,7 +45,7 @@ describe Tool do
 
     subject { tool.total_period }
 
-    it { should == 30.days + 1.week }
+    it { is_expected.to eq 30.days + 1.week }
   end
 
   describe '#versions' do
@@ -65,7 +65,7 @@ describe Tool do
 
     subject { tool.versions }
 
-    it { should include(::Tool::Version.new(version1, time_slot1.period + time_slot2.period)) }
-    it { should include(::Tool::Version.new(version2, time_slot3.period + time_slot4.period)) }
+    it { is_expected.to include(::Tool::Version.new(version1, time_slot1.period + time_slot2.period)) }
+    it { is_expected.to include(::Tool::Version.new(version2, time_slot3.period + time_slot4.period)) }
   end
 end

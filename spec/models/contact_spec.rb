@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 describe Contact do
-  it { should have_db_column(:label) }
-  it { should have_db_column(:url) }
+  it { is_expected.to have_db_column(:label) }
+  it { is_expected.to have_db_column(:url) }
 end
