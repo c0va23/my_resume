@@ -9,8 +9,6 @@ module TimeSlotRepresenter
   property :ended_at_aligned, as: :ended_at
   property :tool_names
 
-  protected
-
   def project_link
     project_path(project_id)
   end
