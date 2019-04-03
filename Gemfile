@@ -8,7 +8,7 @@ source 'https://rubygems.org' do
     gem 'psych'
   end
 
-  gem 'rails', '~> 5.0.7'
+  gem 'rails', '~> 5.1.7'
 
   gem 'rails-i18n'
 
@@ -21,7 +21,7 @@ source 'https://rubygems.org' do
   gem 'redcarpet', '~> 3.3.0'
   gem 'slim', '~> 3.0.3'
   gem 'simple-navigation', '~> 4.0'
-  gem 'roar-rails', '~> 1.1.0'
+  gem 'roar-rails', github: 'apotonick/roar-rails', branch: 'master'
 
   # Image
   gem 'carrierwave', '~> 1.2.2'
