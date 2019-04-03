@@ -18,10 +18,12 @@ RUN apk add --update \
     postgresql-dev \
     nodejs \
     curl \
+    git \
     && true
 
 COPY Gemfile Gemfile.lock .ruby-version ./
 
+RUN gem install bundler:2.0.1
 RUN bundle install --without test development
 
 COPY config ./config
