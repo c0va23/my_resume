@@ -56,7 +56,6 @@ source 'https://rubygems.org' do
     gem 'timecop'
     gem 'ffaker'
     gem 'guard-rubocop'
-    gem 'sqlite3'
   end
 
   group :development do
@@ -66,6 +65,10 @@ source 'https://rubygems.org' do
     gem 'rubocop', '~> 0.40.0', require: false
     gem 'flog', require: false
     gem 'brakeman', require: false
+  end
+
+  group :test, :development do
+    gem 'sqlite3', '~> 1.3.6'
   end
 
   group :production do

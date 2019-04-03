@@ -1,4 +1,4 @@
-FROM ruby:2.5.5-alpine
+FROM ruby:2.6.2-alpine
 
 ENV WORKDIR=/usr/src/app
 
