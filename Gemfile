@@ -25,7 +25,7 @@ source 'https://rubygems.org' do
 
   # View
   gem 'redcarpet', '~> 3.3.0'
-  gem 'slim', '~> 3.0.3'
+  gem 'slim', '~> 4.0.1'
   gem 'simple-navigation', '~> 4.0'
   gem 'responders', '~> 2.4.1'
   gem 'representable', '~> 3.0.4'
