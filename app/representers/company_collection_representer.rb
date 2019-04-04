@@ -1,10 +1,5 @@
-module CompanyCollectionRepresenter
-  include Roar::JSON
+class CompanyCollectionRepresenter < Representable::Decorator
   include Representable::JSON::Collection
 
-  items do
-    property :name
-    property :started_at
-    property :ended_at
-  end
+  items extend: CompanyRepresenter
 end

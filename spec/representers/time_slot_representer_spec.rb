@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TimeSlotRepresenter do
   let(:project) { build(:project, id: 1) }
   let(:time_slot) { build(:time_slot, project: project) }
-  let(:representer) { time_slot.extend(described_class) }
+  let(:representer) { described_class.new(time_slot) }
 
   describe '#to_hash' do
     subject { representer.to_hash }

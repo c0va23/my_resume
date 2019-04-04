@@ -1,10 +1,8 @@
 class CompaniesController < ApplicationController
-  include Roar::Rails::ControllerAdditions
-
-  represents :json, collection: CompanyCollectionRepresenter
+  respond_to :json
 
   def index
     @companies = Company.all
-    respond_with @companies
+    respond_with CompanyCollectionRepresenter.new(@companies)
   end
 end

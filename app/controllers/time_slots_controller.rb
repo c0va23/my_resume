@@ -1,11 +1,9 @@
 class TimeSlotsController < ApplicationController
-  include Roar::Rails::ControllerAdditions
-
-  represents :json, collection: TimeSlotCollectionRepresenter
+  respond_to :json
 
   def index
     @time_slots = base_scope.order(:started_at).includes(:tools, project: [:company])
-    respond_with @time_slots
+    respond_with TimeSlotCollectionRepresenter.new(@time_slots)
   end
 
   protected
