@@ -1,14 +1,14 @@
-require File.expand_path('../boot', __FILE__)
+require File.expand_path('boot', __dir__)
 
 require 'rails'
 
-%w(
+%w[
   active_record/railtie
   action_controller/railtie
   action_view/railtie
   rails/test_unit/railtie
   sprockets/railtie
-).each do |railtie|
+].each do |railtie|
   require railtie
 end
 
@@ -28,7 +28,7 @@ module MyResume
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.enforce_available_locales = true
-    config.i18n.available_locales = %i(ru en)
+    config.i18n.available_locales = %i[ru en]
     config.i18n.default_locale = :ru
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
 
