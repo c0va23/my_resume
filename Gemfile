@@ -8,7 +8,13 @@ source 'https://rubygems.org' do
     gem 'psych'
   end
 
-  gem 'rails', '~> 5.2.3'
+  rails_version = '~> 5.2.3'
+  gem 'activerecord', rails_version
+  gem 'activesupport', rails_version
+  gem 'actionpack', rails_version
+  gem 'actionview', rails_version
+
+  gem 'sprockets-rails'
 
   gem 'rails-i18n'
 
