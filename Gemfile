@@ -72,6 +72,7 @@ source 'https://rubygems.org' do
     gem 'i18n-tasks'
     gem 'pry-rails', require: false
     gem 'rubocop', '~> 0.67.0', require: false
+    gem 'rubocop-rspec', '~> 1.32.0', require: false
   end
 
   group :test, :development do
