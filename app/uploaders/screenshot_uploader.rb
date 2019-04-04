@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ScreenshotUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 

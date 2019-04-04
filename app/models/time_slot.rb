@@ -1,4 +1,4 @@
-class TimeSlot < ActiveRecord::Base
+class TimeSlot < ApplicationRecord
   belongs_to :project
   has_many :tools, through: :project
 
@@ -32,6 +32,7 @@ class TimeSlot < ActiveRecord::Base
 
   def validate_date_range
     return unless crossing_date_ranges_exist?
+
     errors.add(:date_range)
   end
 

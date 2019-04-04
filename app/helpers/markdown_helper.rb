@@ -2,7 +2,9 @@ module MarkdownHelper
   MARKDOWN_OPTIONS = { autolink: true }.freeze
 
   def markdown(content)
+    # rubocop:disable Rails/OutputSafety
     redcarpet_renderer.render(content).html_safe
+    # rubocop:enable Rails/OutputSafety
   end
 
   protected

@@ -1,4 +1,4 @@
-class Tool < ActiveRecord::Base
+class Tool < ApplicationRecord
   include TotalPeriod
 
   validates :name, presence: true, uniqueness: true

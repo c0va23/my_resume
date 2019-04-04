@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base
+class Project < ApplicationRecord
   include TotalPeriod
 
   validates :name, presence: true

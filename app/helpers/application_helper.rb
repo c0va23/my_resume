@@ -18,6 +18,7 @@ module ApplicationHelper
     PERIODS.each_with_object([]) do |(key, multiplier), list|
       count = (period / multiplier).floor
       next if count.zero?
+
       period -= count * multiplier
       list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
     end.join(' ').presence || '&nbsp;'.html_safe

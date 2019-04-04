@@ -1,4 +1,4 @@
-class ToolProject < ActiveRecord::Base
+class ToolProject < ApplicationRecord
   belongs_to :project
   belongs_to :tool
 
