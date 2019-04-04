@@ -69,6 +69,7 @@ source 'https://rubygems.org' do
 
   group :test, :development do
     gem 'sqlite3', '~> 1.3.6'
+    gem 'pry-byebug'
   end
 
   group :production do
