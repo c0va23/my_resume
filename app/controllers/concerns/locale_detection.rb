@@ -1,7 +1,7 @@
 module LocaleDetection
   extend ActiveSupport::Concern
 
-  ACCEPT_LANGUAGE_REGEXP = /([a-z]+(?>-[A-Z0-9]+)?)(?>;q=(\d+\.\d))?,?/
+  ACCEPT_LANGUAGE_REGEXP = /([a-z]+(?>-[A-Z0-9]+)?)(?>;q=(\d+\.\d))?,?/.freeze
 
   included do
     before_action :set_locale
@@ -11,13 +11,14 @@ module LocaleDetection
   protected
 
   def header_locale
-    if request.headers.key?('HTTP_ACCEPT_LANGUAGE')
-      request.headers['HTTP_ACCEPT_LANGUAGE']
-        .scan(ACCEPT_LANGUAGE_REGEXP)
-        .sort_by! { |(_, quality)| -(quality.try(:to_f) || 1.0) }
-        .map! { |(locale, _)| locale }
-        .find { |locale| I18n.locale_available?(locale) }
-    end
+    return unless request.headers.key?('HTTP_ACCEPT_LANGUAGE')
+
+    request
+      .headers['HTTP_ACCEPT_LANGUAGE']
+      .scan(ACCEPT_LANGUAGE_REGEXP)
+      .sort_by! { |(_, quality)| -(quality.try(:to_f) || 1.0) }
+      .map! { |(locale, _)| locale }
+      .find { |locale| I18n.locale_available?(locale) }
   end
 
   def locale_param

@@ -2,7 +2,7 @@ module Admin
   class PagesController < Admin::BaseController
     respond_to :html
 
-    before_action :find_page, only: %i( show edit update delete destroy)
+    before_action :find_page, only: %i[show edit update delete destroy]
 
     def index
       @pages = Page.all
@@ -28,7 +28,7 @@ module Admin
     end
 
     def update
-      @page.update_attributes(page_params)
+      @page.update(page_params)
       respond_with @page, location: [:admin, @page]
     end
 

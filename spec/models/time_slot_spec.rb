@@ -87,7 +87,7 @@ describe TimeSlot do
   describe 'update date range' do
     subject { create(:time_slot, started_at: 1.month.ago, ended_at: 1.month.since) }
 
-    before { subject.update_attributes(started_at: 1.week.ago, ended_at: 1.week.since) }
+    before { subject.update(started_at: 1.week.ago, ended_at: 1.week.since) }
 
     its(:errors) { is_expected.to_not have_key(:date_range) }
   end

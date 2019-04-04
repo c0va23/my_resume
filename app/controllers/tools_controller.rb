@@ -1,8 +1,8 @@
 class ToolsController < ApplicationController
-  respond_to :html, only: %i( index show )
-  respond_to :svg, only: %i( versions )
+  respond_to :html, only: %i[index show]
+  respond_to :svg, only: %i[versions]
 
-  before_action :find_tool, only: %i( show versions )
+  before_action :find_tool, only: %i[show versions]
 
   def index
     @tools = Tool.includes(:time_slots).preload(:tool_type).order(:name).all

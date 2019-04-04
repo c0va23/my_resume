@@ -29,7 +29,7 @@ module Admin
 
     def update
       @company = Company.find(params[:id])
-      @company.update_attributes(company_params)
+      @company.update(company_params)
       respond_with @company, location: [:admin, @company]
     end
 
