@@ -18,8 +18,11 @@ Rails:
 Style/CaseEquality:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
 
 Style/TrailingCommaInArguments:
   Enabled: false
