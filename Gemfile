@@ -21,7 +21,7 @@ source 'https://rubygems.org' do
   gem 'redcarpet', '~> 3.3.0'
   gem 'slim', '~> 3.0.3'
   gem 'simple-navigation', '~> 4.0'
-  gem 'roar-rails', github: 'apotonick/roar-rails', branch: 'master'
+  gem 'representable', '~> 3.0.4'
 
   # Image
   gem 'carrierwave', '~> 1.2.2'
