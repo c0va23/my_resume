@@ -24,7 +24,7 @@ source 'https://rubygems.org' do
   gem 'pg', '~> 0.18.1'
 
   # View
-  gem 'redcarpet', '~> 3.3.0'
+  gem 'redcarpet', '~> 3.4.0'
   gem 'slim', '~> 4.0.1'
   gem 'simple-navigation', '~> 4.0'
   gem 'responders', '~> 2.4.1'
