@@ -4,7 +4,7 @@ class Timeline
     @root = $(root)
     @container = @root.find('.js-timeline-container')[0]
 
-    timeSlotsPath = @root.data('time-slots-path')
+    timeSlotsPath = @root.data('time_slots_path')
     $.ajaxSetup headers: { 'Time-Zone': @timeZone() }
     $.getJSON(timeSlotsPath).done(@onDataLoaded)
 

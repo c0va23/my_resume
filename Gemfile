@@ -8,7 +8,13 @@ source 'https://rubygems.org' do
     gem 'psych'
   end
 
-  gem 'rails', '~> 5.0.7'
+  rails_version = '~> 5.2.3'
+  gem 'activerecord', rails_version
+  gem 'activesupport', rails_version
+  gem 'actionpack', rails_version
+  gem 'actionview', rails_version
+
+  gem 'sprockets-rails'
 
   gem 'rails-i18n'
 
@@ -18,10 +24,11 @@ source 'https://rubygems.org' do
   gem 'pg', '~> 0.18.1'
 
   # View
-  gem 'redcarpet', '~> 3.3.0'
-  gem 'slim', '~> 3.0.3'
+  gem 'redcarpet', '~> 3.4.0'
+  gem 'slim', '~> 4.0.1'
   gem 'simple-navigation', '~> 4.0'
-  gem 'roar-rails', '~> 1.1.0'
+  gem 'responders', '~> 2.4.1'
+  gem 'representable', '~> 3.0.4'
 
   # Image
   gem 'carrierwave', '~> 1.2.2'
@@ -56,7 +63,6 @@ source 'https://rubygems.org' do
     gem 'timecop'
     gem 'ffaker'
     gem 'guard-rubocop'
-    gem 'sqlite3'
   end
 
   group :development do
@@ -66,6 +72,11 @@ source 'https://rubygems.org' do
     gem 'rubocop', '~> 0.40.0', require: false
     gem 'flog', require: false
     gem 'brakeman', require: false
+  end
+
+  group :test, :development do
+    gem 'sqlite3', '~> 1.3.6'
+    gem 'pry-byebug'
   end
 
   group :production do

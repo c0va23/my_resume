@@ -1,5 +1,4 @@
-module TimeSlotCollectionRepresenter
-  include Roar::JSON
+class TimeSlotCollectionRepresenter < Representable::Decorator
   include Representable::JSON::Collection
 
   items extend: TimeSlotRepresenter
