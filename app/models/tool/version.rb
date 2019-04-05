@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Tool
   class Version
     attr_reader :label, :period

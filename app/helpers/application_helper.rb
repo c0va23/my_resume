@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
-  DEFAULT_SITE_NAME = 'MyResume'.freeze
+  DEFAULT_SITE_NAME = 'MyResume'
 
   PERIODS = {
     years: 365.days,

@@ -32,6 +32,3 @@ Style/TrailingCommaInHashLiteral:
 
 Style/TrailingCommaInArguments:
   Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false

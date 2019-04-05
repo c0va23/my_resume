@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CompanyCollectionRepresenter < Representable::Decorator
   include Representable::JSON::Collection
 

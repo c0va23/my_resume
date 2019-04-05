@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Configures your navigation
 
 # rubocop:disable Metrics/BlockLength

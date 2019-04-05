@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module LocaleDetection
   extend ActiveSupport::Concern
 

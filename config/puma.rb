@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 PUMA_THREADS_MIN = Integer(ENV['PUMA_THREADS_MIN'] || 0)
 PUMA_THREADS_MAX = Integer(ENV['PUMA_THREADS_MAX'] || 1)
 PUMA_WORKERS = Integer(ENV['PUMA_WORKERS'] || 1)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ScreenshotUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 

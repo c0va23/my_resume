@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MarkdownHelper
   MARKDOWN_OPTIONS = { autolink: true }.freeze
 

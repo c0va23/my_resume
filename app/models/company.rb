@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Company < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :started_at, presence: true, date: { before: proc { Time.current } }

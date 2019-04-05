@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ToolsController < ApplicationController
   respond_to :html, only: %i[index show]
   respond_to :svg, only: %i[versions]

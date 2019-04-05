@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ToolProject < ApplicationRecord
   belongs_to :project
   belongs_to :tool

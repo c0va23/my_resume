@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AdminControllerAuthHelper
   def admin_authenticated
     username, password = *Rails.configuration.x.admin_credentials.values_at(:username, :password)
