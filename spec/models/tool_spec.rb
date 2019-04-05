@@ -10,30 +10,32 @@ describe Tool do
   it { is_expected.to belong_to(:tool_type) }
 
   describe 'scope :available_for' do
+    subject { described_class.available_for(tool_project) }
+
     let(:project) { create(:project) }
     let!(:appended_tool) { create(:tool) }
     let!(:other_tool) { create(:tool) }
 
     before { project.tools << appended_tool }
 
-    subject { Tool.available_for(tool_project) }
-
-    context 'new tool_project' do
+    context 'when new tool_project' do
       let(:tool_project) { build(:tool_project, project: project, tool: nil) }
 
       it { is_expected.to be_include(other_tool) }
-      it { is_expected.to_not be_include(appended_tool) }
+      it { is_expected.not_to be_include(appended_tool) }
     end
 
-    context 'edit tool_project' do
+    context 'when exists tool_project' do
       let(:tool_project) { create(:tool_project, project: project, tool: other_tool) }
 
       it { is_expected.to be_include(other_tool) }
-      it { is_expected.to_not be_include(appended_tool) }
+      it { is_expected.not_to be_include(appended_tool) }
     end
-  end # scope :available_for
+  end
 
   describe '#total_period' do
+    subject { tool.total_period }
+
     let(:tool) { create(:tool) }
     let(:project) { create(:project) }
 
@@ -43,12 +45,12 @@ describe Tool do
       create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil)
     end
 
-    subject { tool.total_period }
-
     it { is_expected.to eq 30.days + 1.week }
   end
 
   describe '#versions' do
+    subject { tool.versions }
+
     let(:tool) { create(:tool) }
     let(:version1) { '3.2' }
     let(:version2) { '4.0' }
@@ -62,8 +64,6 @@ describe Tool do
     let!(:time_slot2) { create(:time_slot, project: project2, started_at: 4.weeks.ago, ended_at: 3.weeks.ago) }
     let!(:time_slot3) { create(:time_slot, project: project3, started_at: 6.weeks.ago, ended_at: 5.weeks.ago) }
     let!(:time_slot4) { create(:time_slot, project: project3, started_at: 8.weeks.ago, ended_at: 7.weeks.ago) }
-
-    subject { tool.versions }
 
     it { is_expected.to include(::Tool::Version.new(version1, time_slot1.period + time_slot2.period)) }
     it { is_expected.to include(::Tool::Version.new(version2, time_slot3.period + time_slot4.period)) }
