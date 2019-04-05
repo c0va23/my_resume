@@ -1,11 +1,17 @@
+require: rubocop-rspec
+
 Style/Documentation:
   Enabled: false
 
 Metrics/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   Exclude:
     - bin/*
     - db/schema.rb
@@ -22,7 +28,7 @@ Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/TrailingCommaInHashLiteral:
-  Enabled: true
+  Enabled: false
 
 Style/TrailingCommaInArguments:
   Enabled: false
