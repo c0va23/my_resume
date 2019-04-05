@@ -6,12 +6,12 @@ describe TimeSlotRepresenter do
   let(:representer) { described_class.new(time_slot) }
 
   describe '#to_hash' do
-    subject { representer.to_hash }
+    subject(:time_slot_hash) { representer.to_hash }
 
     it 'return start and end date' do
-      is_expected.to include 'started_at' => time_slot.started_at.beginning_of_day,
-                             'ended_at' => time_slot.ended_at_or_now.end_of_day,
-                             'project_link' => "/projects/#{project.id}"
+      expect(time_slot_hash).to include 'started_at' => time_slot.started_at.beginning_of_day,
+                                        'ended_at' => time_slot.ended_at_or_now.end_of_day,
+                                        'project_link' => "/projects/#{project.id}"
     end
   end
 end
