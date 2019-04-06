@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VersionsHelper
   WIDTH = HEIGH = 100.0
   RADIUS_X = WIDTH / 2

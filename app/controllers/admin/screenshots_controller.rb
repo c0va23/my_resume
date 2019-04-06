@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Admin
   class ScreenshotsController < Admin::BaseController
     respond_to :html
 
     before_action :find_project
-    before_action :find_screenshot, only: %i( show edit update delete destroy )
+    before_action :find_screenshot, only: %i[show edit update delete destroy]
 
     def index
       @screenshots = @project.screenshots
@@ -38,7 +40,7 @@ module Admin
     end
 
     def update
-      @screenshot.update_attributes(screenshot_params)
+      @screenshot.update(screenshot_params)
       respond_with @screenshot, location: admin_project_screenshot_path(@project, @screenshot)
     end
 

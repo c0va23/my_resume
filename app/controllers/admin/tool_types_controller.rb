@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Admin
   class ToolTypesController < Admin::BaseController
     respond_to :html
 
-    before_action :find_tool_type, only: %i( show edit update delete destroy )
+    before_action :find_tool_type, only: %i[show edit update delete destroy]
 
     def index
       @tool_types = ToolType.all

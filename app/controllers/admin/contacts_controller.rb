@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Admin
   class ContactsController < Admin::BaseController
     respond_to :html
 
-    before_action :find_contact, only: %i( show edit update delete destroy )
+    before_action :find_contact, only: %i[show edit update delete destroy]
 
     def index
       @contacts = Contact.all

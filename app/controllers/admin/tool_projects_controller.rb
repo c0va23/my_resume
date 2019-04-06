@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Admin
   class ToolProjectsController < Admin::BaseController
     respond_to :html
 
     before_action :find_project
-    before_action :find_tool_project, only: %i( show edit update delete destroy )
+    before_action :find_tool_project, only: %i[show edit update delete destroy]
 
     def index
       @tool_projects = @project.tool_projects
@@ -29,7 +31,7 @@ module Admin
     end
 
     def update
-      @tool_project.update_attributes(tool_project_params)
+      @tool_project.update(tool_project_params)
       respond_with @tool_project, location: [:admin, @project, @tool_project]
     end
 

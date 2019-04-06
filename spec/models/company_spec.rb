@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Company do
@@ -14,38 +16,38 @@ describe Company do
   end
 
   describe 'validations' do
-    subject { build :company }
+    subject(:company) { build :company }
+
+    let(:valid_http_url) do
+      FFaker::Internet.uri(%i[http https].sample) + "/#{FFaker::Internet.slug}"
+    end
+    let(:valid_not_http_url) do
+      FFaker::Internet.uri(%i[ftp phone].sample) + "/#{FFaker::Internet.slug}"
+    end
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name) }
 
     it { is_expected.to validate_presence_of(:started_at) }
-    it 'is_expected.to not allow value of the future' do
-      is_expected.to_not allow_value(1.day.since).for(:started_at)
+    it 'not allow value of the future' do
+      expect(company).not_to allow_value(1.day.since).for(:started_at)
     end
 
     it { is_expected.to allow_value(nil).for(:ended_at) }
     it 'ended_at is_expected.to be great than ended_at' do
-      is_expected.to_not allow_value(subject.started_at - 1.day).for(:ended_at)
+      expect(company).not_to allow_value(company.started_at - 1.day).for(:ended_at)
     end
 
-    let(:valid_http_url) do
-      FFaker::Internet.uri(%i(http https).sample) + "/#{FFaker::Internet.slug}"
-    end
-    let(:valid_not_http_url) do
-      FFaker::Internet.uri(%i(ftp phone).sample) + "/#{FFaker::Internet.slug}"
+    it 'allow valid http url for site_url' do
+      expect(company).to allow_value(valid_http_url).for(:site_url)
     end
 
-    it 'is_expected.toa allow valid http url for site_url' do
-      is_expected.to allow_value(valid_http_url).for(:site_url)
+    it 'not allow valid hot http url for site_url' do
+      expect(company).not_to allow_value(valid_not_http_url).for(:site_url)
     end
 
-    it 'is_expected.toa not allow valid hot http url for site_url' do
-      is_expected.to_not allow_value(valid_not_http_url).for(:site_url)
-    end
-
-    it 'is_expected.to_not allow invalid url for site_url' do
-      is_expected.to_not allow_value(FFaker::Internet.slug).for(:site_url)
+    it 'not allow invalid url for site_url' do
+      expect(company).not_to allow_value(FFaker::Internet.slug).for(:site_url)
     end
   end
 end

@@ -1,5 +1,8 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
+
 # Configures your navigation
+
+# rubocop:disable Metrics/BlockLength
 SimpleNavigation::Configuration.run do |navigation|
   navigation.renderer = SimpleNavigation::Renderer::List
 
@@ -126,7 +129,7 @@ SimpleNavigation::Configuration.run do |navigation|
       else
         companies_navigation.item :new_company, t('admin.companies.new.new_company'), new_admin_company_path
       end
-    end # contacts
+    end
 
     primary.item :pages, t('admin.pages.index.pages'), admin_pages_path, highlights_on: :subpath do |pages_navigation|
       pages_navigation.dom_class = 'nav nav-pills'
@@ -163,7 +166,7 @@ SimpleNavigation::Configuration.run do |navigation|
                                    t('admin.tool_types.new.new_tool_type'),
                                    new_admin_tool_type_path
       end
-    end # tool_types
+    end
 
     primary.item :contacts,
                  t('admin.contacts.index.contacts'),
@@ -179,6 +182,7 @@ SimpleNavigation::Configuration.run do |navigation|
       else
         contacts_navigation.item :new_tool_type, t('admin.contacts.new.new_contact'), new_admin_contact_path
       end
-    end # contacts
+    end
   end
 end
+# rubocop:enable Metrics/BlockLength

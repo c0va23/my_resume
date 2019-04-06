@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class CompaniesController < Admin::BaseController
     respond_to :html
@@ -29,7 +31,7 @@ module Admin
 
     def update
       @company = Company.find(params[:id])
-      @company.update_attributes(company_params)
+      @company.update(company_params)
       respond_with @company, location: [:admin, @company]
     end
 

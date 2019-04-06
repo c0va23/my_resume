@@ -1,4 +1,6 @@
-class Tool < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Tool < ApplicationRecord
   include TotalPeriod
 
   validates :name, presence: true, uniqueness: true

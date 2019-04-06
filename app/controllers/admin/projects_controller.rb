@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Admin
   class ProjectsController < Admin::BaseController
     respond_to :html
 
-    before_action :find_project, only: %i( show edit update delete destroy )
+    before_action :find_project, only: %i[show edit update delete destroy]
 
     def index
       @projects = Project.order(:name).all
@@ -11,6 +13,8 @@ module Admin
     def new
       @project = Project.new
     end
+
+    def show; end
 
     def create
       @project = Project.new(project_params)
@@ -21,19 +25,17 @@ module Admin
       end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
-      if @project.update_attributes(project_params)
+      if @project.update(project_params)
         redirect_to [:admin, @project]
       else
         render :edit
       end
     end
 
-    def delete
-    end
+    def delete; end
 
     def destroy
       @project.destroy

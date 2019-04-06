@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe TimeSlotCollectionRepresenter do
@@ -6,10 +8,10 @@ RSpec.describe TimeSlotCollectionRepresenter do
   let(:representer) { described_class.new(time_slots) }
 
   describe '#to_hash' do
-    subject { representer.to_hash }
+    subject(:time_slots_hash) { representer.to_hash }
 
     it 'return list of time slot hashes' do
-      is_expected.to eq time_slots.map(&TimeSlotRepresenter.method(:new)).map(&:to_hash)
+      expect(time_slots_hash).to eq time_slots.map(&TimeSlotRepresenter.method(:new)).map(&:to_hash)
     end
   end
 end

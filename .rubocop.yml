@@ -1,11 +1,19 @@
+require:
+- rubocop-rspec
+- rubocop-performance
+
 Style/Documentation:
   Enabled: false
 
 Metrics/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   Exclude:
     - bin/*
     - db/schema.rb
@@ -18,11 +26,11 @@ Rails:
 Style/CaseEquality:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/TrailingCommaInArguments:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
   Enabled: false

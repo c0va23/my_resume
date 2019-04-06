@@ -1,4 +1,6 @@
-class Project < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Project < ApplicationRecord
   include TotalPeriod
 
   validates :name, presence: true

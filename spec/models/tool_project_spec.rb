@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe ToolProject do
@@ -9,8 +11,9 @@ describe ToolProject do
   it { is_expected.to validate_uniqueness_of(:tool_id).scoped_to(:project_id) }
 
   describe '#tool_name' do
-    let(:tool) { create(:tool) }
     subject { create(:tool_project, tool: tool) }
+
+    let(:tool) { create(:tool) }
 
     its(:tool_name) { is_expected.to eq tool.name }
   end

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Admin
   class ToolsController < Admin::BaseController
     respond_to :html
 
-    before_action :find_tool, only: %i( show edit update delete destroy )
+    before_action :find_tool, only: %i[show edit update delete destroy]
 
     def new
       @tool = Tool.new
@@ -28,7 +30,7 @@ module Admin
     end
 
     def update
-      @tool.update_attributes(tool_params)
+      @tool.update(tool_params)
       respond_with @tool, location: [:admin, @tool]
     end
 

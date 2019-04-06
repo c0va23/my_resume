@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Admin
   class TimeSlotsController < Admin::BaseController
     respond_to :html
 
     before_action :find_project
-    before_action :find_time_slot, only: %i( show edit update delete destroy )
+    before_action :find_time_slot, only: %i[show edit update delete destroy]
 
     def index
       @time_slots = @project.time_slots
@@ -24,8 +26,10 @@ module Admin
       respond_with @time_slot
     end
 
+    def edit; end
+
     def update
-      @time_slot.update_attributes(time_slot_params)
+      @time_slot.update(time_slot_params)
       respond_with @time_slot, location: [:admin, @project, @time_slot]
     end
 

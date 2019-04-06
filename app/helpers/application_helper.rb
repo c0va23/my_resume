@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
-  DEFAULT_SITE_NAME = 'MyResume'.freeze
+  DEFAULT_SITE_NAME = 'MyResume'
 
   PERIODS = {
     years: 365.days,
@@ -18,6 +20,7 @@ module ApplicationHelper
     PERIODS.each_with_object([]) do |(key, multiplier), list|
       count = (period / multiplier).floor
       next if count.zero?
+
       period -= count * multiplier
       list << t(key, scope: :application_helper, count: count, default: "%{count} #{key}")
     end.join(' ').presence || '&nbsp;'.html_safe

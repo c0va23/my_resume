@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Project do
@@ -17,11 +19,14 @@ describe Project do
   it { is_expected.to delegate_method(:name).to(:company).with_prefix }
 
   describe '#total_period' do
-    let(:project) { create(:project) }
-    let!(:time_slot1) { create(:time_slot, project: project, started_at: 60.days.ago, ended_at: 30.days.ago) }
-    let!(:time_slot2) { create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil) }
-
     subject { project.total_period }
+
+    let(:project) { create(:project) }
+
+    before do
+      create(:time_slot, project: project, started_at: 60.days.ago, ended_at: 30.days.ago)
+      create(:time_slot, project: project, started_at: 1.week.ago, ended_at: nil)
+    end
 
     it { is_expected.to eq 30.days + 1.week }
   end
